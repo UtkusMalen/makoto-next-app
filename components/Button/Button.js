@@ -1,6 +1,11 @@
 import styles from "./Button.module.scss";
 
-const Button = ({ children, bgColor = "fff", textColor = "111" }) => {
+const Button = ({
+  children,
+  bgColor = "fff",
+  textColor = "111",
+  shade = "light",
+}) => {
   return (
     <div
       className={styles.button}
@@ -9,7 +14,11 @@ const Button = ({ children, bgColor = "fff", textColor = "111" }) => {
         color: `#${textColor}`,
       }}>
       {children}
-      <div className={styles.buttonHover} />
+      {
+        shade === 'light' ? <div className={styles.buttonHover} /> : <div className={styles.buttonHoverDark} />
+      }
+      
+      
     </div>
   );
 };

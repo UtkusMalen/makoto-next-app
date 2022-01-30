@@ -1,0 +1,76 @@
+@import "../../styles/Constants.module.scss";
+
+.timerLineWrapper {
+  background-color: $second-color;
+  width: 100%;
+  margin-top: 70px;
+
+  .timerLine {
+    width: 100%;
+    color: $main-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 27px 0;
+
+    .timerTextWrapper {
+      display: flex;
+      flex-direction: column;
+      font-family: "Roboto", sans-serif;
+
+      .timerTextTitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+      }
+      .timerTextSubtitle {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        margin-top: 15px;
+      }
+    }
+
+    .timerWrapper {
+      display: flex;
+      flex-direction: column;
+      .timer {
+        font-family: "NoirPro";
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 100%;
+      }
+      .timerNames {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 5px;
+        .timerName {
+          font-family: "NoirPro", sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 100%;
+          letter-spacing: 0.05em;
+
+          &:nth-child(1) {
+            transform: translateX(17px);
+            -webkit-transform: translateX(17px);
+            -moz-transform: translateX(17px);
+            -ms-transform: translateX(17px);
+            -o-transform: translateX(17px);
+          }
+          &:nth-child(2) {
+            transform: translateX(17px);
+            -webkit-transform: translateX(17px);
+            -moz-transform: translateX(17px);
+            -ms-transform: translateX(17px);
+            -o-transform: translateX(17px);
+          }
+        }
+      }
+    }
+  }
+}

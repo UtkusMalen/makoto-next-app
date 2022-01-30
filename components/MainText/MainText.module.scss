@@ -6,6 +6,123 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  
+
+  .serverStats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 19px;
+    margin-top: 40px;
+
+    .serverStatus {
+      padding: 10px 25px;
+      border: 1px solid $main-third-text-color;
+      border-radius: 30px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+
+      .serverStatsTitle {
+        color: $main-third-text-color;
+        font-family: "Roboto", sans-serif;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 100%;
+        letter-spacing: 0.05em;
+      }
+
+      .serverStatsWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 6px;
+
+        .serverStatsLamp {
+          width: 8px;
+          height: 8px;
+          background: #175b22;
+          border: 1px solid #00f546;
+          box-sizing: border-box;
+          box-shadow: 0px 0px 3px rgba(0, 245, 69, 0.3);
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          margin: 0 5px;
+        }
+
+        .serverStatsCalendar {
+          width: 18px;
+          height: 18px;
+          background-image: url("/CalendarIcon.svg");
+          margin: 0 2px 0 0;
+        }
+        .serverStatsOnline {
+          width: 18px;
+          height: 18px;
+          background-image: url("/OnlineIcon.svg");
+          margin: 0 2px 0 0;
+        }
+
+        .serverStatsText {
+          font-family: "Roboto", sans-serif;
+          color: $main-font-color;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 100%;
+        }
+      }
+    }
+  }
+
+  .playersWrapper {
+    position: relative;
+    margin-top: 140px;
+    .ourPlayersText {
+      position: absolute;
+      width: 118px;
+      height: 90px;
+      right: 0;
+      top: 0;
+      transform: translate(53px, -87px);
+      background-image: url("/ourPlayersText.svg");
+      -webkit-transform: translate(53px, -87px);
+      -moz-transform: translate(53px, -87px);
+      -ms-transform: translate(53px, -87px);
+      -o-transform: translate(53px, -87px);
+    }
+  }
+  .playersHeads {
+    transform: translateX(20px);
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(42px);
+    display: flex;
+    flex-direction: row;
+  }
+  .playersNumber {
+    width: 44px;
+    height: 44px;
+    border: 1px solid $main-font-color;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-42px);
+    -webkit-transform: translateX(-42px);
+    -moz-transform: translateX(-42px);
+    -ms-transform: translateX(-42px);
+    -o-transform: translateX(-42px);
+  }
   .text {
     font-family: "NoirPro", sans-serif;
     font-weight: bold;
@@ -22,7 +139,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 50px 0 0 0;
+    margin: 20px 0 0 0;
     gap: 10px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
@@ -40,7 +157,7 @@
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       -o-border-radius: 50%;
-}
+    }
 
     p {
       margin: 0;

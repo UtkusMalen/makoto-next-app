@@ -1,15 +1,17 @@
 import Head from "next/head";
 import MainText from "../components/MainText/MainText";
-import styles from "../styles/Home.module.scss";
-
+import TimerLine from "../components/TimerLine/TimerLine";
 export default function Home({ title }) {
   return (
-    <div className="container">
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <MainText />
-    </div>
+    <>
+      <div className="container">
+        <Head>
+          <title>{title}</title>
+        </Head>
+        <MainText />
+      </div>
+      <TimerLine />
+    </>
   );
 }
 
