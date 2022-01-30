@@ -1,0 +1,49 @@
+@import "../../styles/Constants.module.scss";
+
+.mainTextWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .text {
+    font-family: "NoirPro", sans-serif;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 80px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: $main-font-color;
+    max-width: 910px;
+    margin: 20px 0 0 0;
+  }
+  .secondaryText {
+    color: $main-secondary-text-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 50px 0 0 0;
+    gap: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    .circle {
+      width: 4px;
+      height: 4px;
+      background-color: $main-secondary-text-color;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+}
+
+    p {
+      margin: 0;
+    }
+  }
+}

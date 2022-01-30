@@ -1,17 +1,46 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Button from "../Button/Button";
-import style from "./Header.module.scss";
+import styles from "./Header.module.scss";
+
+const navigation = [
+  {
+    id: 1,
+    title: "Главная",
+    path: "/",
+  },
+  {
+    id: 2,
+    title: "О нас",
+    path: "/about",
+  },
+  {
+    id: 3,
+    title: "Правила",
+    path: "/rules",
+  },
+  {
+    id: 4,
+    title: "Вики",
+    path: "/wiki",
+  },
+];
 
 const Header = () => {
+  const { pathname } = useRouter();
   return (
     <div className="container-max">
-      <div className={style.header}>
-        <div className={style.logo} />
-        <div className={style.navbarWrapper}>
+      <div className={styles.header}>
+        <div className={styles.logo} />
+        <div className={styles.navbarWrapper}>
           <nav>
-            <a href="">Главная</a>
-            <a href="">О нас</a>
-            <a href="">Правила</a>
-            <a href="">Вики</a>
+            {navigation.map(({ id, title, path }) => (
+              <Link key={id} href={path}>
+                <a className={pathname === path ? styles.active : null}>
+                  {title}
+                </a>
+              </Link>
+            ))}
           </nav>
 
           <Button>Начать игру</Button>
