@@ -1,5 +1,9 @@
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-  return <h1>Makoto Next App</h1>;
+  return (
+    <div className="container">
+      <h1>Makoto Next App</h1>
+    </div>
+  );
 }
