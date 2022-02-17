@@ -3,45 +3,36 @@ import Button from "../Button/Button";
 import TimerLine from "../TimerLine/TimerLine";
 import styles from "./MainText.module.scss";
 // import playerHead from "../../public/PlayerHead.png";
+import axios from "axios";
 
-const MainText = () => {
+const MainText = ({ pageData, serverData }) => {
+  const tags = pageData.fields.mainTextTags.items;
+
   return (
     <div className="container">
       <div className={styles.mainTextWrapper}>
         <div className={styles.playersWrapper}>
           <div className={styles.ourPlayersText}></div>
           <div className={styles.playersHeads}>
-            <img
-              className="imagePlayer"
-              src="/PlayerHead.png"
-              alt="PlayerHead"
-            />
-            <img
-              className="imagePlayer"
-              src="/PlayerHead.png"
-              alt="PlayerHead"
-            />
-            <img
-              className="imagePlayer"
-              src="/PlayerHead.png"
-              alt="PlayerHead"
-            />
-            <img
-              className="imagePlayer"
-              src="/PlayerHead.png"
-              alt="PlayerHead"
-            />
-            <img
-              className="imagePlayer"
-              src="/PlayerHead.png"
-              alt="PlayerHead"
-            />
-            <img
-              className="imagePlayer"
-              src="/PlayerHead.png"
-              alt="PlayerHead"
-            />
-            <div className={styles.playersNumber}>+34</div>
+            {!serverData.players
+              ? [1, 2, 3, 4, 5, 6].map((i) => <div key={i} />)
+              : serverData.players.sample
+                  .slice(0, 6)
+                  .map((player) => (
+                    <img
+                      key={player.id}
+                      className="imagePlayer"
+                      src={`https://mc-heads.net/avatar/${player.id}`}
+                      alt="PlayerHead"
+                    />
+                  ))}
+
+            <div className={styles.playersNumber}>
+              +
+              {serverData.players.online >= 6
+                ? serverData.players.online - 6
+                : 0}
+            </div>
           </div>
         </div>
 
@@ -58,21 +49,27 @@ const MainText = () => {
           </svg>
         </div>
         <h3 className={styles.secondaryText}>
-          <p>MINECRAFT</p>
+          <p>{tags[0].toUpperCase()}</p>
           <span className={styles.circle} />
-          <p>VANILLA</p>
+          <p>{tags[1].toUpperCase()}</p>
           <span className={styles.circle} />
-          <p>SERVER</p>
+          <p>{tags[2].toUpperCase()}</p>
         </h3>
-        <h1 className={styles.text}>
-          Тот самый сервер, который ты так долго искал
-        </h1>
+        <h1 className={styles.text}>{pageData.fields.mainText}</h1>
         <div className={styles.serverStats}>
           <div className={styles.serverStatus}>
             <div className={styles.serverStatsTitle}>Статус Сервера</div>
             <div className={styles.serverStatsWrapper}>
-              <div className={styles.serverStatsLamp} />
-              <div className={styles.serverStatsText}>Активный</div>
+              <div
+                className={
+                  serverData.status
+                    ? styles.serverStatsLampActive
+                    : styles.serverStatsLamp
+                }
+              />
+              <div className={styles.serverStatsText}>
+                {serverData.status ? "Активный" : "Неактивен"}
+              </div>
             </div>
           </div>
 
@@ -80,7 +77,7 @@ const MainText = () => {
             <div className={styles.serverStatsTitle}>Дата Открытия</div>
             <div className={styles.serverStatsWrapper}>
               <div className={styles.serverStatsCalendar} />
-              <div className={styles.serverStatsText}>6 Декабря, 2021</div>
+              <div className={styles.serverStatsText}>8 Апреля, 2020</div>
             </div>
           </div>
 
@@ -88,15 +85,26 @@ const MainText = () => {
             <div className={styles.serverStatsTitle}>Онлайн</div>
             <div className={styles.serverStatsWrapper}>
               <div className={styles.serverStatsOnline} />
-              <div className={styles.serverStatsText}>40/100</div>
+              <div className={styles.serverStatsText}>
+                {serverData.players.online}/{serverData.players.max}
+              </div>
             </div>
           </div>
         </div>
-
-        
       </div>
     </div>
   );
+};
+export const getServerSideProps = async () => {
+  const data = await fetch(
+    "https://eu.mc-api.net/v3/server/ping/vanilla.makotomc.ru"
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
 };
 
 export default MainText;

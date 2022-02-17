@@ -56,19 +56,27 @@
           letter-spacing: 0.05em;
 
           &:nth-child(1) {
-            transform: translateX(17px);
-            -webkit-transform: translateX(17px);
-            -moz-transform: translateX(17px);
-            -ms-transform: translateX(17px);
-            -o-transform: translateX(17px);
+            transform: translateX(13px);
+            -webkit-transform: translateX(13px);
+            -moz-transform: translateX(13px);
+            -ms-transform: translateX(13px);
+            -o-transform: translateX(13px);
           }
           &:nth-child(2) {
-            transform: translateX(17px);
-            -webkit-transform: translateX(17px);
-            -moz-transform: translateX(17px);
-            -ms-transform: translateX(17px);
-            -o-transform: translateX(17px);
-          }
+            transform: translateX(-2px);
+            -webkit-transform: translateX(-2px);
+            -moz-transform: translateX(-2px);
+            -ms-transform: translateX(-2px);
+            -o-transform: translateX(-2px);
+}
+
+          &:nth-child(3) {
+            transform: translateX(-16px);
+            -webkit-transform: translateX(-16px);
+            -moz-transform: translateX(-16px);
+            -ms-transform: translateX(-16px);
+            -o-transform: translateX(-16px);
+}
         }
       }
     }

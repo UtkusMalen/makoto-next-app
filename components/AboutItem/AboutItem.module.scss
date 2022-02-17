@@ -1,0 +1,61 @@
+.aboutItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 140px;
+
+  .aboutImage {
+    min-width: 360px;
+    height: 360px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    background-image: url("/about/about1.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .aboutTextWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .aboutTitleWtapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .aboutTitleEmoji {
+        min-width: 40px;
+        height: 40px;
+        background-image: url("/emoji/emoji1.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .aboutTitle {
+        white-space: nowrap;
+        font-family: "NoirPro", sans-serif;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 57px;
+        /* identical to box height */
+
+        letter-spacing: 0.05em;
+        margin: 0 0 0 15px;
+      }
+    }
+
+    .aboutDescription {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      margin: 17px 0 60px 0;
+    }
+  }
+}

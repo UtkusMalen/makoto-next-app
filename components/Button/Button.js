@@ -5,9 +5,14 @@ const Button = ({
   bgColor = "fff",
   textColor = "111",
   shade = "light",
+  url,
+  target
 }) => {
   return (
-    <div
+    <a
+      target={target || "_self"}
+      rel="noreferrer"
+      href={url || '#'}
       className={styles.button}
       style={{
         backgroundColor: `#${bgColor}`,
@@ -19,7 +24,7 @@ const Button = ({
       }
       
       
-    </div>
+    </a>
   );
 };
 
