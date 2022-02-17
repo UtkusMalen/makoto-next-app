@@ -2,6 +2,7 @@ import style from "./Layout.module.scss";
 import Head from "next/head";
 
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +17,7 @@ const Layout = ({ children }) => {
         <Header />
 
         {children}
-        <h2>Footer</h2>
+        <Footer />
       </div>
     </div>
   );
