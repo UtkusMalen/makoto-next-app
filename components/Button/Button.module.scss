@@ -16,6 +16,19 @@
   white-space: nowrap;
   cursor: pointer;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  max-height: 40px;
+
+  p {
+    margin: 0;
+  }
+
+  .buttonIcon {
+    margin: 0 4px 0 0;
+  }
 
   .buttonHover {
     content: "";

@@ -1,0 +1,126 @@
+@import "../../styles/Constants.module.scss";
+
+.guide {
+  margin: 130px 0 300px 0;
+  .guideWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .guideTitleWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 auto;
+
+      .guideTitleEmoji {
+        min-width: 40px;
+        height: 40px;
+        background-image: url("/emoji/emoji1.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .guideTitleText {
+        font-family: "NoirPro", sans-serif;
+        font-weight: normal;
+        font-size: 40px;
+        line-height: 57px;
+        letter-spacing: 0.05em;
+        color: $main-font-color;
+        margin: 0 0 0 15px;
+      }
+    }
+
+    .guideButtonsWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 80px 0 0 0;
+      gap: 20px;
+    }
+
+    .guideStepsWrapper {
+      margin: 40px auto 0 auto;
+      max-width: 775px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .guideStepWrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .guideArrow {
+          width: 35px;
+          height: 50px;
+          position: absolute;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          top: 10px;
+          left: -40px;
+        }
+        .guideArrow2 {
+          width: 120px;
+          height: 100%;
+          position: absolute;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          top: 0;
+          right: -60px;
+        }
+
+        .guideStepImage {
+          margin: 30px auto 0 auto;
+          img {
+            border: 1px solid #ecdb853f !important;
+          }
+        }
+
+        .guideStepHeader {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          .guideStepDot {
+            min-width: 10px;
+            height: 10px;
+            background: #ecdb85;
+            border: 1px solid #fff3b4;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 8px #fff3b4;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            margin: 8px 0 0 0;
+          }
+
+          .guideStepText {
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: 0.05em;
+            color: $main-font-color;
+            margin: 0 0 0 15px;
+
+            p {
+              margin: 0;
+              padding: 0;
+              a {
+                color: #ecdb85;
+                text-shadow: 0 0 3px #ecdb85;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

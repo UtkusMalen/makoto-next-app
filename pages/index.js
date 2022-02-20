@@ -3,8 +3,9 @@ import client from "../contentful";
 import MainText from "../components/MainText/MainText";
 import TimerLine from "../components/TimerLine/TimerLine";
 import About from "../components/About/About";
+import Guide from "../components/Guide/Guide";
 
-export default function Home({ home, serverData, articles }) {
+export default function Home({ home, serverData, guide, articles }) {
   return (
     <>
       <div className="container">
@@ -15,6 +16,11 @@ export default function Home({ home, serverData, articles }) {
       </div>
       <TimerLine />
       <About articles={articles} />
+      <Guide
+        guideTitleEmoji={home.fields.guideEmoji}
+        guideTitleText={home.fields.guideTitle}
+        guideSteps={guide}
+      />
     </>
   );
 }
@@ -29,6 +35,10 @@ export const getServerSideProps = async () => {
     content_type: "aboutArticle",
   });
 
+  const guide = await client.getEntries({
+    content_type: "guide",
+  });
+
   const data = await fetch(
     "https://eu.mc-api.net/v3/server/ping/vanilla.makotomc.ru"
   );
@@ -39,6 +49,7 @@ export const getServerSideProps = async () => {
     props: {
       home: homePage,
       articles: articles.items,
+      guide: guide.items,
       serverData: dataJson,
     },
   };

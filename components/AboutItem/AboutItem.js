@@ -3,8 +3,15 @@ import styles from "./AboutItem.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const AboutItem = ({ reverse, articleFields }) => {
-  const { title, description, buttonText, buttonUrl, emoji, image } =
-    articleFields;
+  const {
+    title,
+    description,
+    buttonText,
+    buttonIcon,
+    buttonUrl,
+    emoji,
+    image,
+  } = articleFields;
   return (
     <div
       style={{ flexDirection: reverse === "true" ? "row-reverse" : "row" }}
@@ -29,7 +36,8 @@ const AboutItem = ({ reverse, articleFields }) => {
           target="_blank"
           bgColor="ECDB85"
           textColor="111111"
-          shade="light">
+          shade="light"
+          serverIcon={buttonIcon}>
           {buttonText}
         </Button>
       </div>

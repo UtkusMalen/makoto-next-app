@@ -3,7 +3,6 @@ import Button from "../Button/Button";
 import styles from "./About.module.scss";
 
 const About = ({ articles }) => {
-  console.log(articles);
   return (
     <div className="container">
       <div className={styles.about}>
