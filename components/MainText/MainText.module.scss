@@ -103,13 +103,32 @@
     }
   }
   .playersHeads {
-    transform: translateX(20px);
-    -webkit-transform: translateX(20px);
-    -moz-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    -o-transform: translateX(42px);
     display: flex;
     flex-direction: row;
+
+    .playerHeadLoader {
+      min-width: 44px;
+      height: 44px;
+
+      path {
+        fill: #202224;
+        stroke: none;
+        animation: loader 2s ease-in-out infinite;
+        -webkit-animation: loader 2s ease-in-out infinite;
+      }
+
+      @keyframes loader {
+        0% {
+          fill: $loader-start-color;
+        }
+        50% {
+          fill: $loader-end-color;
+        }
+        100% {
+          fill: $loader-start-color;
+        }
+      }
+    }
   }
   .playersNumber {
     width: 44px;

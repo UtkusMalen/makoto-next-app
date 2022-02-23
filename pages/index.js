@@ -8,14 +8,14 @@ import Guide from "../components/Guide/Guide";
 export default function Home({ home, serverData, guide, articles }) {
   return (
     <>
+      <Head>
+        <title>{home ? home.fields.title : "Makoto"}</title>
+      </Head>
       <div className="container">
-        <Head>
-          <title>{home.fields.title}</title>
-        </Head>
         <MainText pageData={home} serverData={serverData} />
       </div>
       <TimerLine />
-      <About articles={articles} />
+      {/* <About articles={articles} /> */}
       <Guide
         guideTitleEmoji={home.fields.guideEmoji}
         guideTitleText={home.fields.guideTitle}

@@ -1,0 +1,30 @@
+.rulesWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin: 0 0 100px 0;
+
+  .rulesitemsList {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .sticky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    width: 140px;
+    height: 140px;
+    color: #fff;
+    background: #30b298;
+  }
+  .content {
+    height: 2000px;
+    width: 100%;
+    background: rgb(117, 117, 117);
+  }
+}

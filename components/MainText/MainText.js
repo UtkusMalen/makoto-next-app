@@ -8,26 +8,70 @@ import axios from "axios";
 const MainText = ({ pageData, serverData }) => {
   const tags = pageData.fields.mainTextTags.items;
 
+  const test = 8;
+
   return (
     <div className="container">
       <div className={styles.mainTextWrapper}>
-        <div className={styles.playersWrapper}>
-          <div className={styles.ourPlayersText}></div>
+        <div
+          style={{
+            transform: `translateX(${
+              serverData ? (serverData.players.online * 7) / 2 : "21"
+            }px)`,
+          }}
+          className={styles.playersWrapper}>
+          <div className={styles.ourPlayersText} />
           <div className={styles.playersHeads}>
             {!serverData.players
-              ? [1, 2, 3, 4, 5, 6].map((i) => <div key={i} />)
+              ? [1, 2, 3, 4, 5, 6].map((i, index) => (
+                  <div
+                    key={i}
+                    style={{ transform: `translateX(-${index * 7}px)` }}
+                    alt="PlayerHead"
+                    className={styles.playerHeadLoader}>
+                    <svg width="37" height="44" viewBox="0 0 37 44" fill="none">
+                      <path
+                        style={{
+                          animationDelay: `${index * 200}ms`,
+                        }}
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M37 5.90641C32.6931 9.9224 30 15.6467 30 22C30 28.3533 32.6931 34.0776 37 38.0936C33.0702 41.7579 27.797 44 22 44C9.84974 44 0 34.1503 0 22C0 9.84974 9.84974 0 22 0C27.797 0 33.0702 2.24209 37 5.90641Z"
+                        fill="#C4C4C4"
+                      />
+                    </svg>
+                  </div>
+                ))
               : serverData.players.sample
                   .slice(0, 6)
-                  .map((player) => (
+                  .map((player, index) => (
                     <img
                       key={player.id}
                       className="imagePlayer"
                       src={`https://mc-heads.net/avatar/${player.id}`}
+                      style={{ transform: `translateX(-${index * 7}px)` }}
                       alt="PlayerHead"
                     />
                   ))}
 
-            <div className={styles.playersNumber}>
+            <div
+              // style={{
+              //   transform: `translateX(-${
+              //     serverData && serverData.players.online <= 6
+              //       ? serverData.players.online * 7
+              //       : "42"
+              //   }px)`,
+              // }}
+              style={{
+                transform: `translateX(-${
+                  serverData
+                    ? serverData.players.online <= 6
+                      ? serverData.players.online * 7
+                      : "42"
+                    : "42"
+                }px)`,
+              }}
+              className={styles.playersNumber}>
               +
               {serverData.players.online >= 6
                 ? serverData.players.online - 6
