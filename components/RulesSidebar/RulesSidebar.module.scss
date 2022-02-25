@@ -1,78 +1,23 @@
 @import "../../styles/Constants.module.scss";
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  position: sticky;
-  align-self: flex-start;
-  top: 20px;
-
-  .sidebarTitle {
-    margin: 0;
-    font-family: "NoirPro", sans-serif;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 100%;
-    letter-spacing: 0.05em;
-    color: $main-font-color;
-    white-space: nowrap;
-  }
-
-  .sidebarListWrapper {
-    padding: 30px 26px;
-    background: rgba(17, 17, 17, 0.05);
-    border: 1px solid #868686;
-    box-sizing: border-box;
-    backdrop-filter: blur(20px);
-    max-height: calc(100vh - 270px);
-    overflow-y: auto;
-    /* Note: backdrop-filter has minimal browser support */
-
-    border-radius: 20px;
-    .sidebarList {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+.sidebarItemWrapper {
+  cursor: pointer;
+  .sidebarItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    .sidebarItemText {
       margin: 0;
-      list-style: none;
-      padding: 0;
-
-      .sidebarItem {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-        .sidebarItemText {
-          margin: 0;
-        }
-
-        .sidebarEmoji {
-          min-width: 30px;
-          height: 30px;
-          background-image: url("/emoji/emoji4.png");
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-      }
     }
-  }
 
-  ::-webkit-scrollbar-track {
-    background: transparent;
-    width: 14px;
-  }
-
-  ::-webkit-scrollbar {
-    width: 30px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    width: 6px;
-    border: 12px solid rgba(0, 0, 0, 0);
-    background-clip: padding-box;
-    border-radius: 9999px;
-    background-color: #aaaaaa;
+    .sidebarEmoji {
+      min-width: 30px;
+      height: 30px;
+      background-image: url("/emoji/emoji4.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }

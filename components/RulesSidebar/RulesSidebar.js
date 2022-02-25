@@ -1,46 +1,21 @@
 import styles from "./RulesSidebar.module.scss";
+import { Link } from "react-scroll";
 
-const RulesSidebar = () => {
+const RulesSidebar = ({ title, emoji, slug }) => {
   return (
-    <div className={styles.sidebar}>
-      <h2 className={styles.sidebarTitle}>Правила сервера</h2>
-      <div className={styles.sidebarListWrapper}>
-        <ul className={styles.sidebarList}>
-          <li className={styles.sidebarItem}>
-            <div className={styles.sidebarEmoji} />
-            <h3 className={styles.sidebarItemText}>I. Поведение на сервере</h3>
-          </li>
-          <li className={styles.sidebarItem}>
-            <div className={styles.sidebarEmoji} />
-            <h3 className={styles.sidebarItemText}>I. Поведение на сервере</h3>
-          </li>
-          <li className={styles.sidebarItem}>
-            <div className={styles.sidebarEmoji} />
-            <h3 className={styles.sidebarItemText}>I. Поведение на сервере</h3>
-          </li>
-          <li className={styles.sidebarItem}>
-            <div className={styles.sidebarEmoji} />
-            <h3 className={styles.sidebarItemText}>I. Поведение на сервере</h3>
-          </li>
-          <li className={styles.sidebarItem}>
-            <div className={styles.sidebarEmoji} />
-            <h3 className={styles.sidebarItemText}>I. Поведение на сервере</h3>
-          </li>
-          <li className={styles.sidebarItem}>
-            <div className={styles.sidebarEmoji} />
-            <h3 className={styles.sidebarItemText}>I. Поведение на сервере</h3>
-          </li>
-          <li className={styles.sidebarItem}>
-            <div className={styles.sidebarEmoji} />
-            <h3 className={styles.sidebarItemText}>I. Поведение на сервере</h3>
-          </li>
-          <li className={styles.sidebarItem}>
-            <div className={styles.sidebarEmoji} />
-            <h3 className={styles.sidebarItemText}>I. Поведение на сервере</h3>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <li className={styles.sidebarItemWrapper}>
+      <Link to={slug} smooth={true}>
+        <div className={styles.sidebarItem}>
+          <div
+            className={styles.sidebarEmoji}
+            style={{
+              backgroundImage: `url("${emoji.fields.file.url}")`,
+            }}
+          />
+          <h3 className={styles.sidebarItemText}>{title}</h3>
+        </div>
+      </Link>
+    </li>
   );
 };
 

@@ -15,7 +15,7 @@ export default function Home({ home, serverData, guide, articles }) {
         <MainText pageData={home} serverData={serverData} />
       </div>
       <TimerLine />
-      {/* <About articles={articles} /> */}
+      <About articles={articles} />
       <Guide
         guideTitleEmoji={home.fields.guideEmoji}
         guideTitleText={home.fields.guideTitle}
