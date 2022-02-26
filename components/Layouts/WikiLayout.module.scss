@@ -1,0 +1,88 @@
+@import "../../styles/Constants.module.scss";
+
+.wikiWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 37px;
+  margin: 0 0 100px 0;
+
+  .wikiMenuWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+
+    .wikiMenuTitle {
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    .wikiMenu {
+      min-width: 390px;
+      background: rgba(17, 17, 17, 0.05);
+      border: 1px solid #868686;
+      box-sizing: border-box;
+      backdrop-filter: blur(20px);
+      /* Note: backdrop-filter has minimal browser support */
+
+      border-radius: 20px;
+      padding: 15px 0;
+
+      .wikiMenuSubtitle {
+        margin: 0;
+        padding: 15px 26px;
+        border-top: 1px solid #868686;
+        border-bottom: 1px solid #868686;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        /* identical to box height, or 20px */
+
+        letter-spacing: 0.05em;
+
+        color: #e2e2e2;
+      }
+
+      .wikiMenuList {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        .wikiMenuItem {
+          padding: 15px 26px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+
+          .wikiMenuEmoji {
+            min-width: 30px;
+            height: 30px;
+            background-image: url("/emoji/rule6.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+
+          a {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 100%;
+            letter-spacing: 0.05em;
+            color: $main-font-color;
+          }
+        }
+
+        .wikiMenuItemActive {
+          @extend .wikiMenuItem;
+          background: rgba(134, 134, 134, 0.2);
+        }
+      }
+    }
+  }
+}

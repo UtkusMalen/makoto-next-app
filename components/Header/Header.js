@@ -24,6 +24,11 @@ const navigation = [
     title: "Вики",
     path: "/wiki",
   },
+  {
+    id: 5,
+    title: "Доки",
+    path: "/docs/page1",
+  },
 ];
 
 const Header = () => {
@@ -32,6 +37,7 @@ const Header = () => {
     <div className="container-max">
       <div className={styles.header}>
         <div className={styles.logo} />
+
         <div className={styles.navbarWrapper}>
           <nav>
             {navigation.map(({ id, title, path }) => (
