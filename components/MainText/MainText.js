@@ -10,6 +10,9 @@ const MainText = ({ pageData, serverData }) => {
 
   const test = 8;
 
+  const tst = 0;
+  console.log(serverData);
+
   return (
     <div className="container">
       <div className={styles.mainTextWrapper}>
@@ -22,7 +25,7 @@ const MainText = ({ pageData, serverData }) => {
           className={styles.playersWrapper}>
           <div className={styles.ourPlayersText} />
           <div className={styles.playersHeads}>
-            {!serverData.players
+            {!serverData.players || serverData.players === 0
               ? [1, 2, 3, 4, 5, 6].map((i, index) => (
                   <div
                     key={i}
@@ -65,7 +68,8 @@ const MainText = ({ pageData, serverData }) => {
               style={{
                 transform: `translateX(-${
                   serverData
-                    ? serverData.players.online <= 6
+                    ? serverData.players.online <= 6 &&
+                      serverData.players.online !== 0
                       ? serverData.players.online * 7
                       : "42"
                     : "42"

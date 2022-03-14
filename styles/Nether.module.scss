@@ -1,0 +1,37 @@
+@import "./styles/Constants.module.scss";
+
+.nether {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .netherTitle {
+    font-family: "NoirPro", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin: 0;
+
+    @media (max-width: $breakpoint-large) {
+      font-size: 34px;
+    }
+  }
+
+  .netherSubtitle {
+    margin: 0;
+  }
+  .netherText {
+    margin: 10px 0 30px 0;
+  }
+
+  .netherTree {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+
+    
+  }
+}

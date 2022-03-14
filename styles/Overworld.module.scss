@@ -1,0 +1,43 @@
+@import "./styles/Constants.module.scss";
+
+.overworld {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .overworldTitle {
+    font-family: "NoirPro", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin: 0;
+
+    @media (max-width: $breakpoint-large) {
+      font-size: 34px;
+    }
+  }
+  .overworldWrapper {
+    .overworldSubtitle {
+      margin: 0;
+    }
+    .overworldText {
+      margin: 10px 0 30px 0;
+    }
+    .overworldImage {
+      width: 100%;
+      height: 185px;
+      background-image: url("/overworld.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      margin: 30px 0;
+    }
+  }
+}

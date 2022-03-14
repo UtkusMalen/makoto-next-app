@@ -12,12 +12,14 @@ const navigation = [
       {
         id: 1,
         title: "Навигатор",
-        path: "/docs/page1",
+        path: "/wiki/navigator",
+        emoji: "/emoji/navigator.png",
       },
       {
         id: 2,
         title: "Часто задаваемые вопросы",
-        path: "/docs/page2",
+        path: "/wiki/faq",
+        emoji: "/emoji/questions.png",
       },
     ],
   },
@@ -28,17 +30,20 @@ const navigation = [
       {
         id: 1,
         title: "Верхний мир",
-        path: "/docs/page1",
+        path: "/wiki/overworld",
+        emoji: "/emoji/overworld.png",
       },
       {
         id: 2,
         title: "Энд",
-        path: "/docs/page1",
+        path: "/wiki/end",
+        emoji: "/emoji/end.png",
       },
       {
         id: 3,
         title: "Ад",
-        path: "/docs/page1",
+        path: "/wiki/nether",
+        emoji: "/emoji/nether.png",
       },
     ],
   },
@@ -49,19 +54,22 @@ const navigation = [
       {
         id: 1,
         title: "Хайперлуп",
-        path: "/docs/page1",
+        path: "/wiki/page1",
+        emoji: "/emoji/hyperloop.png",
       },
       {
         id: 2,
         title: "Карта",
-        path: "/docs/page1",
+        path: "/wiki/page1",
+        emoji: "/emoji/map.png",
       },
     ],
   },
 ];
 
-const WikiLayout = ({ children }) => {
+const WikiLayout = ({ children, paths }) => {
   const { pathname } = useRouter();
+  console.log(paths);
 
   return (
     <div className="container-max">
@@ -73,7 +81,7 @@ const WikiLayout = ({ children }) => {
           <h2 className={styles.wikiMenuTitle}>Вики</h2>
           <nav className={styles.wikiMenu}>
             {navigation.map((menuBlock) => (
-              <>
+              <div key={menuBlock.id}>
                 {menuBlock.title ? (
                   <h4 className={styles.wikiMenuSubtitle}>{menuBlock.title}</h4>
                 ) : (
@@ -82,26 +90,32 @@ const WikiLayout = ({ children }) => {
 
                 <ul key={menuBlock.id} className={styles.wikiMenuList}>
                   {menuBlock.links.map((menuItem) => (
-                    <li
-                      key={menuItem.id}
-                      className={
-                        pathname === menuItem.path
-                          ? styles.wikiMenuItemActive
-                          : styles.wikiMenuItem
-                      }>
-                      <Image
-                        src={"/emoji/emoji1.png"}
-                        width={30}
-                        height={30}
-                        alt="emoji"
-                      />
-                      <Link href={`${menuItem.path}`}>
-                        <a>{menuItem.title}</a>
-                      </Link>
-                    </li>
+                    <Link key={menuItem.id} href={`${menuItem.path}`}>
+                      <a>
+                        <li
+                          className={
+                            pathname === menuItem.path
+                              ? styles.wikiMenuItemActive
+                              : styles.wikiMenuItem
+                          }>
+                          <img
+                            className={styles.wikiMenuEmoji}
+                            src={
+                              menuItem.emoji
+                                ? menuItem.emoji
+                                : "/emoji/emoji1.png"
+                            }
+                            alt="Emoji"
+                          />
+                          <h5 className={styles.wikiMenuItemTitle}>
+                            {menuItem.title}
+                          </h5>
+                        </li>
+                      </a>
+                    </Link>
                   ))}
                 </ul>
-              </>
+              </div>
             ))}
           </nav>
         </div>

@@ -1,0 +1,89 @@
+.dropdownBranch {
+  padding: 20px;
+  background: rgba(17, 17, 17, 0.05);
+  border: 1px solid #72a7e5;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  cursor: pointer;
+
+  .dropdownBranchHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .dropdownBranchTitle {
+      margin: 0;
+    }
+    .dropdownBranchArrow {
+      // min-width: 16px;
+      // height: 6px;
+      // background-image: url("/icons/arrowBlue.svg");
+      // background-size: contain;
+      // background-position: center;
+      // background-repeat: no-repeat;
+      transition: 0.3s all ease-in-out;
+      -webkit-transition: 0.3s all ease-in-out;
+      -moz-transition: 0.3s all ease-in-out;
+      -ms-transition: 0.3s all ease-in-out;
+      -o-transition: 0.3s all ease-in-out;
+      transition-delay: 0.1s;
+
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+  }
+
+  .dropdownBranchList {
+    max-height: 0;
+    margin: 0 0 0 0;
+    overflow: hidden;
+    transition: 0.5s all e;
+    -webkit-transition: 0.5s all cubic-bezier(0, 1, 0, 1);
+    -moz-transition: 0.5s all cubic-bezier(0, 1, 0, 1);
+    -ms-transition: 0.5s all cubic-bezier(0, 1, 0, 1);
+    -o-transition: 0.5s all cubic-bezier(0, 1, 0, 1);
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .dropdownItem {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      &:nth-child(1) {
+        margin: 10px 0 0 0;
+      }
+    }
+
+    .dropdownCoordinates {
+      width: 30px;
+      white-space: nowrap;
+    }
+
+    .dropdownLine {
+      width: 20px;
+    }
+  }
+
+  .dropdownBranchListActive {
+    @extend .dropdownBranchList;
+    height: auto;
+    max-height: 9999px;
+    overflow: hidden;
+    margin: 0;
+    transition: 0.5s all cubic-bezier(1, 0, 1, 0);
+    -webkit-transition: 0.5s all cubic-bezier(1, 0, 1, 0);
+    -moz-transition: 0.5s all cubic-bezier(1, 0, 1, 0);
+    -ms-transition: 0.5s all cubic-bezier(1, 0, 1, 0);
+    -o-transition: 0.5s all cubic-bezier(1, 0, 1, 0);
+  }
+}

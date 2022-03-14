@@ -1,0 +1,91 @@
+@import "../../styles/Constants.module.scss";
+
+.navigatorItem {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 20px 25px 20px;
+  background: rgba(17, 17, 17, 0.05);
+  border: 1px solid #868686;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  transition: 0.1s background ease-in-out;
+  -webkit-transition: 0.1s background ease-in-out;
+  -moz-transition: 0.1s background ease-in-out;
+  -ms-transition: 0.1s background ease-in-out;
+  -o-transition: 0.1s background ease-in-out;
+
+  &:hover {
+    background: rgba(161, 161, 161, 0.08);
+    backdrop-filter: blur(30px);
+    border-color: transparent;
+    transition: 0.1s background ease-in-out;
+    -webkit-transition: 0.1s background ease-in-out;
+    -moz-transition: 0.1s background ease-in-out;
+    -ms-transition: 0.1s background ease-in-out;
+    -o-transition: 0.1s background ease-in-out;
+  }
+
+  .navigatorItemHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .navigatorItemEmoji {
+      min-width: 40px;
+      height: 40px;
+      background-image: url("/emoji/emoji1.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: none;
+      outline: none;
+    }
+
+    .navigatorItemArrow {
+      min-width: 40px;
+      height: 40px;
+      background-image: url("/icons/arrow.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .navigatorItemLink {
+      @extend .navigatorItemArrow;
+      background-image: url("/icons/linkIconWhite.svg");
+    }
+  }
+
+  .navigatorItemTitle {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: $main-font-color;
+  }
+}
+
+.navigatorItemLink {
+  @extend .navigatorItem;
+
+  .navigatorItemLink {
+    @extend .navigatorItemArrow;
+    background-image: url("/icons/linkIconWhite.svg");
+    border: none;
+  }
+
+  &:hover {
+    background: rgba(29, 27, 139, 0.08);
+    backdrop-filter: blur(30px);
+    border-color: transparent;
+    transition: 0.1s background ease-in-out;
+    -webkit-transition: 0.1s background ease-in-out;
+    -moz-transition: 0.1s background ease-in-out;
+    -ms-transition: 0.1s background ease-in-out;
+    -o-transition: 0.1s background ease-in-out;
+  }
+}

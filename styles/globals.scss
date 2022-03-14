@@ -166,12 +166,20 @@ a {
   transition: all 0.2s ease-in-out;
 }
 
-
-
 .imagePlayer {
   clip-path: url(#deermask);
   height: 44px;
+  position: relative;
+
+  &::before {
+    content: "lol";
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    position: absolute;
+  }
 }
+
 // .imagePlayer:nth-child(2) {
 //   transform: translateX(-7px);
 //   -webkit-transform: translateX(-7px);

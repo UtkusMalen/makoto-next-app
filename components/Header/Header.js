@@ -8,31 +8,33 @@ const navigation = [
     id: 1,
     title: "Главная",
     path: "/",
+    secondPath: "",
   },
   {
     id: 2,
     title: "О нас",
     path: "/about",
+    secondPath: "",
   },
   {
     id: 3,
     title: "Правила",
     path: "/rules",
+    secondPath: "",
   },
+
   {
     id: 4,
     title: "Вики",
     path: "/wiki",
-  },
-  {
-    id: 5,
-    title: "Доки",
-    path: "/docs/page1",
+    secondPath: "/navigator",
   },
 ];
 
 const Header = () => {
   const { pathname } = useRouter();
+  const pathFormatted = pathname.split("/");
+
   return (
     <div className="container-max">
       <div className={styles.header}>
@@ -40,9 +42,12 @@ const Header = () => {
 
         <div className={styles.navbarWrapper}>
           <nav>
-            {navigation.map(({ id, title, path }) => (
-              <Link key={id} href={path}>
-                <a className={pathname === path ? styles.active : null}>
+            {navigation.map(({ id, title, path, secondPath }) => (
+              <Link key={id} href={path + secondPath}>
+                <a
+                  className={
+                    "/" + pathFormatted[1] === path ? styles.active : null
+                  }>
                   {title}
                 </a>
               </Link>
