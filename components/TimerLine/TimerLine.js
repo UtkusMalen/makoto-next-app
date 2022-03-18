@@ -19,7 +19,7 @@ const TimerLine = () => {
     return { years, months, days };
   };
 
-  const timeSinceOpening = timer("2020-04-08");
+  const timeSinceOpening = timer("2020-03-24");
 
   return (
     <div className={styles.timerLineWrapper}>

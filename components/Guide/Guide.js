@@ -4,6 +4,10 @@ import Image from "next/image";
 import Button from "../Button/Button";
 
 const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
+  function SortAscending(arr) {
+    return arr.sort((a, b) => (a.fields.id > b.fields.id ? 1 : -1));
+  }
+  SortAscending(guideSteps);
   return (
     <div className={styles.guide}>
       <div className="container">
@@ -18,7 +22,7 @@ const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
             <h3 className={styles.guideTitleText}>{guideTitleText}</h3>
           </div>
           <div className={styles.guideStepsWrapper}>
-            {guideSteps.reverse().map((step) => (
+            {guideSteps.map((step) => (
               <div key={step.fields.slug} className={styles.guideStepWrapper}>
                 <div
                   style={{
@@ -59,10 +63,17 @@ const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
             ))}
           </div>
           <div className={styles.guideButtonsWrapper}>
-            <Button icon='discordButton.svg' borderColor="ECDB85" textColor="ECDB85">
+            <Button
+              icon="discordButton.svg"
+              borderColor="ECDB85"
+              textColor="ECDB85">
               Discord Сервер
             </Button>
-            <Button icon='shopButtonOutline.svg' bgColor="ECDB85" textColor="111" shade="light">
+            <Button
+              icon="shopButtonOutline.svg"
+              bgColor="ECDB85"
+              textColor="111"
+              shade="light">
               Магазин
             </Button>
           </div>

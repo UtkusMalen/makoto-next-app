@@ -125,7 +125,7 @@ const MainText = ({ pageData, serverData }) => {
             <div className={styles.serverStatsTitle}>Дата Открытия</div>
             <div className={styles.serverStatsWrapper}>
               <div className={styles.serverStatsCalendar} />
-              <div className={styles.serverStatsText}>8 Апреля, 2020</div>
+              <div className={styles.serverStatsText}>24 Марта, 2020</div>
             </div>
           </div>
 

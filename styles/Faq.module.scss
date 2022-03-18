@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: 30px;
 
+  @media (max-width: $breakpoint-large) {
+    gap: 34px;
+  }
+
   .faqTitle {
     font-family: "NoirPro", sans-serif;
     font-weight: bold;

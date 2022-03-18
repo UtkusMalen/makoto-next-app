@@ -1,0 +1,38 @@
+@import "./styles/Constants.module.scss";
+
+.map {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (max-width: $breakpoint-large) {
+    gap: 34px;
+  }
+  .mapTitle {
+    font-family: "NoirPro", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin: 0;
+
+    @media (max-width: $breakpoint-large) {
+      font-size: 34px;
+    }
+  }
+  .mapWrapper {
+    .mapAttention {
+      padding: 20px;
+      border: solid 1px #868686;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      margin: 0;
+      font-weight: 400;
+      color: #c4c4c4;
+}
+  }
+}

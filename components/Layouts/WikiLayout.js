@@ -54,13 +54,13 @@ const navigation = [
       {
         id: 1,
         title: "Хайперлуп",
-        path: "/wiki/page1",
+        path: "/wiki/hyperloop",
         emoji: "/emoji/hyperloop.png",
       },
       {
         id: 2,
         title: "Карта",
-        path: "/wiki/page1",
+        path: "/wiki/map",
         emoji: "/emoji/map.png",
       },
     ],

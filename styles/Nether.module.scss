@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: 30px;
 
+  @media (max-width: $breakpoint-large) {
+    gap: 34px;
+  }
+
   .netherTitle {
     font-family: "NoirPro", sans-serif;
     font-weight: bold;
@@ -21,9 +25,19 @@
 
   .netherSubtitle {
     margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    color: #ffffff;
   }
   .netherText {
     margin: 10px 0 30px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    color: #dedede;
   }
 
   .netherTree {
@@ -31,7 +45,5 @@
     flex-direction: column;
     padding: 20px 0;
     gap: 20px;
-
-    
   }
 }
