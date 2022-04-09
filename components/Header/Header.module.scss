@@ -1,4 +1,4 @@
-@import "../../styles/Constants.module.scss";
+@import '../../styles/Constants.module.scss';
 
 .header {
   width: 100%;
@@ -10,11 +10,125 @@
   z-index: 2;
   position: relative;
 
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+    padding: 5px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // background: rgba(1, 1, 1, 0.01);
+    // backdrop-filter: saturate(120%) blur(5px);
+  }
+
+  .navbarBurger {
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    display: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 48px;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    -moz-transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    -ms-transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    -o-transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+    &:hover [class*='_bun'] {
+      background: #999;
+    }
+
+    .hamburger__top_bun,
+    .hamburger__bottom_bun {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 6px;
+      width: 18px;
+      height: 1px;
+      background: #fff;
+      transform: rotate(0);
+      transition: all 0.25s;
+    }
+
+    .hamburger__top_bun {
+      top: 23px;
+      transform: translateY(-3px);
+      -webkit-transform: translateY(-3px);
+      -moz-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+      -o-transform: translateY(-3px);
+      transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+      -webkit-transition: all 0.3s
+        cubic-bezier(0.4, 0.01, 0.165, 0.99);
+      -moz-transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+      -ms-transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+      -o-transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+
+    .hamburger__bottom_bun {
+      bottom: 23px;
+      transform: translateY(3px);
+      transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      display: inherit;
+    }
+  }
+
+  .lol {
+    display: flex;
+  }
+
+  .navbarMobileWrapper {
+    height: 100%;
+    width: 100%;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    max-height: none;
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(20px);
+    transition: background 0.44s 0.2s
+        cubic-bezier(0.52, 0.16, 0.24, 1),
+      height 0.34s cubic-bezier(0.52, 0.16, 0.24, 1);
+    -webkit-transition: background 0.44s 0.2s
+        cubic-bezier(0.52, 0.16, 0.24, 1),
+      height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1);
+    -moz-transition: background 0.44s 0.2s
+        cubic-bezier(0.52, 0.16, 0.24, 1),
+      height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1);
+    -ms-transition: background 0.44s 0.2s
+        cubic-bezier(0.52, 0.16, 0.24, 1),
+      height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1);
+    -o-transition: background 0.44s 0.2s
+        cubic-bezier(0.52, 0.16, 0.24, 1),
+      height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1);
+
+    .navbarMobileList {
+      transition: visibility 0s linear 1s;
+      visibility: hidden;
+      transition-delay: 0s;
+    }
+    .navbarMobileListActive {
+      transition: visibility 0s linear 1s;
+      visibility: visible;
+    }
+  }
+
   .logo {
     min-width: 40px;
     min-height: 40px;
-    background: url("/Logo.svg");
+    background: url('/Logo.svg');
     background-size: contain;
+    z-index: 10;
+
+    @media (max-width: $breakpoint-tablet) {
+      min-width: 30px;
+      min-height: 30px;
+    }
   }
   .navbarWrapper {
     display: flex;
@@ -22,7 +136,13 @@
     align-items: center;
     justify-content: space-between;
     max-width: 780px;
+    max-height: 300px;
     width: 100%;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
 
     nav {
       max-width: 500px;
@@ -38,13 +158,13 @@
         font-size: 16px;
         line-height: 23px;
         letter-spacing: 0.05em;
-        font-family: "NoirPro", sans-serif;
+        font-family: 'NoirPro', sans-serif;
         font-weight: 500;
         position: relative;
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 100%;
           height: 3px;
           background: linear-gradient(

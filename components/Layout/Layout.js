@@ -1,8 +1,8 @@
-import style from "./Layout.module.scss";
-import Head from "next/head";
+import style from './Layout.module.scss';
+import Head from 'next/head';
 
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import HeaderNew from '../HeaderNew/HeaderNew';
+import Footer from '../Footer/Footer';
 
 const Layout = ({ children }) => {
   // console.log("%c❗ ОСТАНОВИСЬ ❗", "color:red; font-size:50px");
@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <Header />
+        <HeaderNew />
 
         {children}
         <Footer />

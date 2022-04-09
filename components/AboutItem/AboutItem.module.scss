@@ -1,8 +1,22 @@
+@import "./styles/Constants.module.scss";
+
 .aboutItem {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 140px;
+
+  p {
+    margin: 0;
+  }
+
+  @media (max-width: $breakpoint-large) {
+    gap: 60px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column-reverse !important;
+  }
 
   .aboutImage {
     min-width: 360px;
@@ -16,6 +30,18 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+    @media (max-width: $breakpoint-laptop) {
+      min-width: 250px;
+      height: 250px;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      background-size: cover;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
   }
 
   .aboutTextWrapper {
@@ -35,6 +61,19 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+        align-self: flex-start;
+        margin-top: 10px;
+
+        @media (max-width: $breakpoint-tablet) {
+          min-width: 34px;
+          height: 34px;
+          margin-top: 12px;
+        }
+        @media (max-width: $breakpoint-mobile) {
+          min-width: 28px;
+          height: 28px;
+          margin-top: 15px;
+        }
       }
 
       .aboutTitle {
@@ -47,6 +86,19 @@
 
         letter-spacing: 0.05em;
         margin: 0 0 0 15px;
+
+        @media (max-width: $breakpoint-large) {
+          white-space: normal;
+        }
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 28px;
+          margin: 0 0 0 10px;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 24px;
+          margin: 0 0 0 10px;
+        }
       }
     }
 

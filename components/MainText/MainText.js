@@ -14,7 +14,7 @@ const MainText = ({ pageData, serverData }) => {
   console.log(serverData);
 
   return (
-    <div className="container">
+    <div>
       <div className={styles.mainTextWrapper}>
         <div
           style={{
@@ -22,7 +22,8 @@ const MainText = ({ pageData, serverData }) => {
               serverData ? (serverData.players.online * 7) / 2 : "21"
             }px)`,
           }}
-          className={styles.playersWrapper}>
+          className={styles.playersWrapper}
+        >
           <div className={styles.ourPlayersText} />
           <div className={styles.playersHeads}>
             {!serverData.players || serverData.players === 0
@@ -31,7 +32,8 @@ const MainText = ({ pageData, serverData }) => {
                     key={i}
                     style={{ transform: `translateX(-${index * 7}px)` }}
                     alt="PlayerHead"
-                    className={styles.playerHeadLoader}>
+                    className={styles.playerHeadLoader}
+                  >
                     <svg width="37" height="44" viewBox="0 0 37 44" fill="none">
                       <path
                         style={{
@@ -75,7 +77,8 @@ const MainText = ({ pageData, serverData }) => {
                     : "42"
                 }px)`,
               }}
-              className={styles.playersNumber}>
+              className={styles.playersNumber}
+            >
               +
               {serverData.players.online >= 6
                 ? serverData.players.online - 6
@@ -105,36 +108,38 @@ const MainText = ({ pageData, serverData }) => {
         </h3>
         <h1 className={styles.text}>{pageData.fields.mainText}</h1>
         <div className={styles.serverStats}>
-          <div className={styles.serverStatus}>
-            <div className={styles.serverStatsTitle}>Статус Сервера</div>
-            <div className={styles.serverStatsWrapper}>
-              <div
-                className={
-                  serverData.status
-                    ? styles.serverStatsLampActive
-                    : styles.serverStatsLamp
-                }
-              />
-              <div className={styles.serverStatsText}>
-                {serverData.status ? "Активный" : "Неактивен"}
+          <div className={styles.serverStatsWrapper}>
+            <div className={styles.serverStatus}>
+              <div className={styles.serverStatsTitle}>Статус Сервера</div>
+              <div className={styles.serverStatsWrapper}>
+                <div
+                  className={
+                    serverData.status
+                      ? styles.serverStatsLampActive
+                      : styles.serverStatsLamp
+                  }
+                />
+                <div className={styles.serverStatsText}>
+                  {serverData.status ? "Активный" : "Неактивен"}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className={styles.serverStatus}>
-            <div className={styles.serverStatsTitle}>Дата Открытия</div>
-            <div className={styles.serverStatsWrapper}>
-              <div className={styles.serverStatsCalendar} />
-              <div className={styles.serverStatsText}>24 Марта, 2020</div>
+            <div className={styles.serverStatus}>
+              <div className={styles.serverStatsTitle}>Дата Открытия</div>
+              <div className={styles.serverStatsWrapper}>
+                <div className={styles.serverStatsCalendar} />
+                <div className={styles.serverStatsText}>24 Марта, 2020</div>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.serverStatus}>
-            <div className={styles.serverStatsTitle}>Онлайн</div>
-            <div className={styles.serverStatsWrapper}>
-              <div className={styles.serverStatsOnline} />
-              <div className={styles.serverStatsText}>
-                {serverData.players.online}/{serverData.players.max}
+            <div className={styles.serverStatus}>
+              <div className={styles.serverStatsTitle}>Онлайн</div>
+              <div className={styles.serverStatsWrapper}>
+                <div className={styles.serverStatsOnline} />
+                <div className={styles.serverStatsText}>
+                  {serverData.players.online}/{serverData.players.max}
+                </div>
               </div>
             </div>
           </div>

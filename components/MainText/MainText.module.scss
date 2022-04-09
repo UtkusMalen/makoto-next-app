@@ -8,78 +8,130 @@
   justify-content: center;
 
   .serverStats {
+    width: 100%;
+    position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 19px;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      height: 100%;
+      width: 50px;
+      background: linear-gradient(
+        270deg,
+        #111111 0%,
+        #111111 46.94%,
+        rgba(17, 17, 17, 0) 99.27%,
+        rgba(17, 17, 17, 0) 100%
+      );
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
     margin-top: 40px;
 
-    .serverStatus {
-      padding: 10px 25px;
-      border: 1px solid $main-third-text-color;
-      border-radius: 30px;
-      -webkit-border-radius: 30px;
-      -moz-border-radius: 30px;
-      -ms-border-radius: 30px;
-      -o-border-radius: 30px;
+    .serverStatsWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 19px;
+      position: relative;
 
-      .serverStatsTitle {
-        color: $main-third-text-color;
-        font-family: "Roboto", sans-serif;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 100%;
-        letter-spacing: 0.05em;
+      @media (max-width: $breakpoint-tablet) {
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
 
-      .serverStatsWrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 6px;
+      @media (max-width: $breakpoint-mobile) {
+        gap: 5px;
+      }
 
-        .serverStatsLampActive {
-          width: 8px;
-          height: 8px;
-          background: #175b22;
-          border: 1px solid #00f546;
-          box-sizing: border-box;
-          box-shadow: 0px 0px 3px rgba(0, 245, 69, 1);
-          border-radius: 50%;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          -ms-border-radius: 50%;
-          -o-border-radius: 50%;
-          margin: 0 7px;
+      .serverStatus {
+        padding: 10px 25px;
+        border: 1px solid $main-third-text-color;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+
+        @media (max-width: $breakpoint-mobile) {
+          padding: 8px 25px;
         }
 
-        .serverStatsLampDisable {
-          @extend .serverStatsLampActive;
-          background: #701c1c;
-          border: 1px solid #f50000;
-          box-sizing: border-box;
-          box-shadow: 0px 0px 3px rgba(245, 0, 0, 1);
-        }
-
-        .serverStatsCalendar {
-          width: 18px;
-          height: 18px;
-          background-image: url("/CalendarIcon.svg");
-          margin: 0 2px 0 0;
-        }
-        .serverStatsOnline {
-          width: 18px;
-          height: 18px;
-          background-image: url("/OnlineIcon.svg");
-          margin: 0 2px 0 0;
-        }
-
-        .serverStatsText {
+        .serverStatsTitle {
+          color: $main-third-text-color;
           font-family: "Roboto", sans-serif;
-          color: $main-font-color;
-          font-weight: 500;
-          font-size: 16px;
+          font-weight: normal;
+          font-size: 12px;
           line-height: 100%;
+          letter-spacing: 0.05em;
+          white-space: nowrap;
+        }
+
+        .serverStatsWrapper {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 6px;
+          gap: 2px;
+
+          @media (max-width: $breakpoint-mobile) {
+            margin-top: 5px;
+          }
+
+          .serverStatsLampActive {
+            width: 8px;
+            height: 8px;
+            background: #175b22;
+            border: 1px solid #00f546;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 3px rgba(0, 245, 69, 1);
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            margin: 0 7px;
+          }
+
+          .serverStatsLampDisable {
+            @extend .serverStatsLampActive;
+            background: #701c1c;
+            border: 1px solid #f50000;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 3px rgba(245, 0, 0, 1);
+          }
+
+          .serverStatsCalendar {
+            width: 18px;
+            height: 18px;
+            background-image: url("/CalendarIcon.svg");
+            margin: 0 2px 0 0;
+          }
+          .serverStatsOnline {
+            width: 18px;
+            height: 18px;
+            background-image: url("/OnlineIcon.svg");
+            margin: 0 2px 0 0;
+          }
+
+          .serverStatsText {
+            font-family: "Roboto", sans-serif;
+            color: $main-font-color;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 100%;
+            white-space: nowrap;
+
+            @media (max-width: $breakpoint-mobile) {
+              font-size: 14px;
+            }
+          }
         }
       }
     }
@@ -158,6 +210,20 @@
     color: $main-font-color;
     max-width: 910px;
     margin: 20px 0 0 0;
+
+    @media (max-width: $breakpoint-laptop) {
+      font-size: 70px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 60px;
+      line-height: 99.6%;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 40px;
+    }
   }
   .secondaryText {
     color: $main-secondary-text-color;
@@ -189,5 +255,3 @@
     }
   }
 }
-
-
