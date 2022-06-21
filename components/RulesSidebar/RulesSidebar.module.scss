@@ -9,6 +9,10 @@
     gap: 10px;
     .sidebarItemText {
       margin: 0;
+
+      @media (max-width: $breakpoint-laptop) {
+        font-size: 18px;
+      }
     }
 
     .sidebarEmoji {
@@ -18,6 +22,11 @@
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+
+      @media (max-width: $breakpoint-mobile) {
+        min-width: 26px;
+        height: 26px;
+      }
     }
   }
 }

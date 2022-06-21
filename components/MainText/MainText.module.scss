@@ -15,7 +15,7 @@
 
     &::after {
       content: "";
-      height: 100%;
+      height: 101%;
       width: 50px;
       background: linear-gradient(
         270deg,
@@ -25,8 +25,13 @@
         rgba(17, 17, 17, 0) 100%
       );
       position: absolute;
-      right: 0;
+      right: -1px;
       top: 0;
+      display: none;
+
+      @media (max-width: $breakpoint-mobile) {
+        display: flex;
+      }
     }
 
     margin-top: 40px;
@@ -58,6 +63,10 @@
         -moz-border-radius: 30px;
         -ms-border-radius: 30px;
         -o-border-radius: 30px;
+
+        &:last-child {
+          margin-right: 30px;
+        }
 
         @media (max-width: $breakpoint-mobile) {
           padding: 8px 25px;
@@ -152,6 +161,15 @@
       -moz-transform: translate(53px, -87px);
       -ms-transform: translate(53px, -87px);
       -o-transform: translate(53px, -87px);
+
+
+      @media (max-width: $breakpoint-mobile) {
+        display: none;
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-top: 80px;
     }
   }
   .playersHeads {
@@ -216,13 +234,13 @@
     }
 
     @media (max-width: $breakpoint-tablet) {
-      font-size: 60px;
+      font-size: 50px;
       line-height: 99.6%;
       letter-spacing: 0.05em;
     }
 
     @media (max-width: $breakpoint-mobile) {
-      font-size: 40px;
+      font-size: 36px;
     }
   }
   .secondaryText {

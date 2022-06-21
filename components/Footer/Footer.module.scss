@@ -30,6 +30,11 @@
           background-size: contain;
           background-position: center;
           background-repeat: no-repeat;
+
+          @media (max-width: $breakpoint-mobile) {
+            min-width: 30px;
+            height: 30px;
+          }
         }
 
         .footerLogoName {
@@ -39,6 +44,10 @@
           line-height: 100%;
           letter-spacing: 0.1em;
           color: #ffffff;
+
+          @media (max-width: $breakpoint-mobile) {
+            font-size: 25px;
+          }
         }
       }
 
@@ -48,6 +57,18 @@
         gap: 150px;
         margin: 50px 0 100px 0;
 
+        @media (max-width: $breakpoint-laptop) {
+          gap: 80px;
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+          gap: 40px;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          gap: 30px;
+        }
+
         .footerNavBlock {
           .footerNavTitle {
             font-family: "NoirPro", sans-serif;
@@ -56,6 +77,10 @@
             line-height: 100%;
             letter-spacing: 0.1em;
             color: $footer-nav-title-color;
+
+            @media (max-width: $breakpoint-mobile) {
+              font-size: 16px;
+            }
           }
 
           .footerNavList {
@@ -69,6 +94,7 @@
               display: flex;
               flex-direction: row;
               align-items: center;
+              gap: 9px;
 
               &:nth-child(1) .footerNavIcon {
                 background-image: url("/icons/discordIcon.svg");
@@ -85,6 +111,11 @@
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
+
+                @media (max-width: $breakpoint-mobile) {
+                  min-width: 16px;
+                  height: 16px;
+                }
               }
 
               .footerNavLink {
@@ -94,7 +125,10 @@
                 line-height: 100%;
                 letter-spacing: 0.1em;
                 color: $footer-nav-link-color;
-                margin: 0 0 0 9px;
+
+                @media (max-width: $breakpoint-mobile) {
+                  font-size: 14px;
+                }
               }
             }
           }
@@ -105,12 +139,13 @@
         font-weight: normal;
         font-size: 18px;
         line-height: 100%;
-        /* identical to box height, or 20px */
-
         letter-spacing: 0.1em;
-
         color: #c6c6c6;
         margin: 15px 0 0 0;
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -129,6 +164,10 @@
     -o-transform: translateX(100px) scale(1.1);
     position: absolute;
     right: 0;
+
+    @media (max-width: $breakpoint-mobile) {
+      transform: translateX(150px) scale(1);
+    }
   }
 
   .footerCopyright {
@@ -146,5 +185,7 @@
     line-height: 100%;
     letter-spacing: 0.1em;
     color: $footer-nav-copyright-color;
+    white-space: nowrap;
+    text-align: center;
   }
 }

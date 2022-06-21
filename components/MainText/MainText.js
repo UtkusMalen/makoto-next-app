@@ -8,10 +8,16 @@ import axios from "axios";
 const MainText = ({ pageData, serverData }) => {
   const tags = pageData.fields.mainTextTags.items;
 
-  const test = 8;
+  const test = 6;
 
   const tst = 0;
   console.log(serverData);
+
+  // style={{
+  //   transform: `translateX(${
+  //     serverData ? '(serverData.players.online * 7) / 2' : "21"
+  //   }px)`,
+  // }}
 
   return (
     <div>
@@ -19,11 +25,14 @@ const MainText = ({ pageData, serverData }) => {
         <div
           style={{
             transform: `translateX(${
-              serverData ? (serverData.players.online * 7) / 2 : "21"
+              serverData &&
+              serverData.players.online < 6 &&
+              serverData.players.online !== 0
+                ? (serverData.players.online * 7) / 2
+                : "21"
             }px)`,
           }}
-          className={styles.playersWrapper}
-        >
+          className={styles.playersWrapper}>
           <div className={styles.ourPlayersText} />
           <div className={styles.playersHeads}>
             {!serverData.players || serverData.players === 0
@@ -32,8 +41,7 @@ const MainText = ({ pageData, serverData }) => {
                     key={i}
                     style={{ transform: `translateX(-${index * 7}px)` }}
                     alt="PlayerHead"
-                    className={styles.playerHeadLoader}
-                  >
+                    className={styles.playerHeadLoader}>
                     <svg width="37" height="44" viewBox="0 0 37 44" fill="none">
                       <path
                         style={{
@@ -74,11 +82,10 @@ const MainText = ({ pageData, serverData }) => {
                       serverData.players.online !== 0
                       ? serverData.players.online * 7
                       : "42"
-                    : "42"
+                    : "21"
                 }px)`,
               }}
-              className={styles.playersNumber}
-            >
+              className={styles.playersNumber}>
               +
               {serverData.players.online >= 6
                 ? serverData.players.online - 6

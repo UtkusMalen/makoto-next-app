@@ -1,3 +1,5 @@
+@import "../../styles/Constants.module.scss";
+
 .layout {
   width: 100%;
   min-height: 890px;
@@ -9,7 +11,26 @@
   background-size: contain;
   z-index: 1;
   position: relative;
-  padding-top: 50px;
+  padding-top: 100px;
+
+  @media (max-width: $breakpoint-laptop) {
+    background-size: cover;
+    min-height: 0;
+    max-height: 680px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    background-size: cover;
+    min-height: 0;
+    max-height: 580px;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    background-size: cover;
+    min-height: 0;
+    max-height: 480px;
+  }
+
   // overflow: hidden;
 
   // &::after {

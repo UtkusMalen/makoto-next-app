@@ -40,7 +40,7 @@ const HeaderNew = () => {
 
   if (typeof window !== "undefined") {
     document.body.style.overflow =
-      burger && window.innerWidth < 768 ? "hidden" : "scroll";
+      burger && window.innerWidth < 768 ? "hidden" : "auto";
   }
 
   useEffect(() => {
@@ -91,7 +91,7 @@ const HeaderNew = () => {
             {navigation.map(({ id, title, path, secondPath }, index) => (
               <li
                 onClick={() => {
-                  setBurger(!burger);
+                  setBurger(false);
                 }}
                 key={id}>
                 <Link href={path + secondPath}>

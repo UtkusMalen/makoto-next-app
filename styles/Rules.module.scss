@@ -6,13 +6,22 @@
   gap: 50px;
   margin: 0 0 100px 0;
 
+  @media (max-width: $breakpoint-laptop) {
+    flex-direction: column;
+  }
+
   .sidebar {
     display: flex;
     flex-direction: column;
     gap: 30px;
     position: sticky;
     align-self: flex-start;
-    top: 20px;
+    top: 60px;
+
+    @media (max-width: $breakpoint-laptop) {
+      position: inherit;
+      width: 100%;
+    }
 
     .sidebarTitle {
       margin: 0;
@@ -23,6 +32,10 @@
       letter-spacing: 0.05em;
       color: $main-font-color;
       white-space: nowrap;
+
+      @media (max-width: $breakpoint-laptop) {
+        font-size: 30px;
+      }
     }
 
     .sidebarListWrapper {
@@ -33,9 +46,12 @@
       backdrop-filter: blur(20px);
       max-height: calc(100vh - 270px);
       overflow-y: auto;
-      /* Note: backdrop-filter has minimal browser support */
-  
       border-radius: 20px;
+
+      @media (max-width: $breakpoint-laptop) {
+        max-height: 300px;
+      }
+
       .sidebarList {
         display: flex;
         flex-direction: column;
