@@ -6,6 +6,30 @@
   gap: 37px;
   margin: 50px 0 100px 0;
 
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    width: 14px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 30px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 6px;
+    border: 12px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: #aaaaaa;
+  }
+
+  @media (max-width: $breakpoint-laptop) {
+    flex-direction: column;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    margin: 10px 0 100px 0;
+  }
+
   .wikiMenuWrapper {
     display: flex;
     flex-direction: column;
@@ -13,6 +37,28 @@
     position: sticky;
     top: 60px;
     align-self: flex-start;
+
+    &::after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      height: 30px;
+
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(17, 17, 17, 0) 0%,
+        rgba(17, 17, 17, 0.5) 100%
+      );
+      border-radius: 0px 0px 19px 19px;
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+      position: relative;
+      top: 0;
+      width: 100%;
+    }
 
     .wikiMenuTitle {
       margin: 0;
@@ -22,11 +68,12 @@
       font-weight: bold;
       font-size: 40px;
       line-height: 100%;
-      /* identical to box height, or 40px */
-
       letter-spacing: 0.05em;
-
       color: #ffffff;
+
+      @media (max-width: $breakpoint-laptop) {
+        font-size: 30px;
+      }
     }
 
     .wikiMenu {
@@ -35,10 +82,17 @@
       border: 1px solid #868686;
       box-sizing: border-box;
       backdrop-filter: blur(20px);
-      /* Note: backdrop-filter has minimal browser support */
-
       border-radius: 20px;
       padding: 15px 0;
+
+      @media (max-width: $breakpoint-laptop) {
+        overflow-y: overlay;
+        max-height: 300px;
+        min-width: 0;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        max-height: 250px;
+      }
 
       .wikiMenuSubtitle {
         margin: 0;
@@ -83,6 +137,10 @@
           -ms-transition: 0.1s all ease-in-out;
           -o-transition: 0.1s all ease-in-out;
 
+          @media (max-width: $breakpoint-mobile) {
+            align-items: flex-start;
+          }
+
           &:hover {
             background: rgba(134, 134, 134, 0.2);
             transition: 0.1s all ease-in-out;
@@ -98,7 +156,15 @@
             line-height: 100%;
             letter-spacing: 0.05em;
             color: $main-font-color;
-            margin: 0
+            margin: 0;
+
+            @media (max-width: $breakpoint-laptop) {
+              font-size: 18px;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+              margin-top: 5px;
+            }
           }
         }
 

@@ -65,7 +65,9 @@
         -o-border-radius: 30px;
 
         &:last-child {
-          margin-right: 30px;
+          @media (max-width: $breakpoint-mobile) {
+            margin-right: 30px;
+          }
         }
 
         @media (max-width: $breakpoint-mobile) {
@@ -161,7 +163,6 @@
       -moz-transform: translate(53px, -87px);
       -ms-transform: translate(53px, -87px);
       -o-transform: translate(53px, -87px);
-
 
       @media (max-width: $breakpoint-mobile) {
         display: none;

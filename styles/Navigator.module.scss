@@ -7,6 +7,8 @@
     flex-direction: column;
     gap: 40px;
 
+    
+
     .navigatorBlock {
       display: flex;
       flex-direction: column;
@@ -24,7 +26,11 @@
         letter-spacing: 0.05em;
         color: $main-font-color;
         margin: 0;
-        
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 30px;
+        }
+
         @media (max-width: $breakpoint-large) {
           font-size: 34px;
         }
@@ -49,6 +55,10 @@
 
         @media (max-width: $breakpoint-tablet) {
           grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          gap: 20px;
         }
       }
     }

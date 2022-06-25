@@ -62,8 +62,8 @@
           .itemText {
             font-weight: normal;
             font-size: 18px;
-            line-height: 21px;
-            letter-spacing: 0.05em;
+            line-height: auto;
+
             color: $main-font-color;
 
             @media (max-width: $breakpoint-laptop) {
@@ -88,8 +88,8 @@
             .itemPenaltyText {
               font-weight: normal;
               font-size: 18px;
-              line-height: 21px;
-              letter-spacing: 0.05em;
+              line-height: auto;
+              color: $main-secondary-text-color;
 
               @media (max-width: $breakpoint-laptop) {
                 font-size: 16px;

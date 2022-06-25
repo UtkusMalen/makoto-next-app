@@ -11,6 +11,8 @@ const Button = ({
   borderColor,
   icon,
   serverIcon,
+  padding = [13, 33],
+  fontSize=14
 }) => {
   return (
     <a
@@ -22,6 +24,8 @@ const Button = ({
         backgroundColor: borderColor ? `transparent` : `#${bgColor}`,
         color: `#${textColor}`,
         border: borderColor ? `1px solid #${borderColor}` : ``,
+        padding: `${padding[0]}px ${padding[1]}px`,
+        fontSize: `${fontSize}px`
       }}>
       {icon ? (
         <div className={styles.buttonIcon}>

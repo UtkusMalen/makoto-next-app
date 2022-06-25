@@ -7,6 +7,11 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
+
+    @media (max-width: $breakpoint-mobile) {
+      align-items: flex-start;
+    }
+
     .sidebarItemText {
       margin: 0;
 

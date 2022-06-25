@@ -19,7 +19,7 @@ const DocsPage = ({ overworld }) => {
           и постройки Вы можете спокойно воздвигать в обычном мире.
         </p>
         <p className={styles.overworldText}>
-          Размер мира — 40к в каждую сторону.
+          Размер мира — 10к в каждую сторону.
         </p>
 
         <div className={styles.dropdownWrapper}>

@@ -1,5 +1,6 @@
 import Button from "../Button/Button";
 import styles from "./TimerLine.module.scss";
+import Link from "next/link";
 import moment from "moment";
 import "moment-precise-range-plugin";
 
@@ -46,9 +47,13 @@ const TimerLine = () => {
             </div>
           </div>
 
-          <Button bgColor="111" textColor="fff" shade="dark">
-            Начать играть
-          </Button>
+          <Link href={"/#guide"}>
+            <a>
+              <Button bgColor="111" textColor="fff" shade="dark">
+                Начать играть
+              </Button>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

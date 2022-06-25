@@ -47,7 +47,7 @@ const navigation = [
         title: "Верхний мир",
         icon: "/emoji/overworld.png",
         type: "default",
-        href: "/wiki/overwold",
+        href: "/wiki/overworld",
       },
       {
         id: 2,

@@ -9,7 +9,7 @@ const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
   }
   SortAscending(guideSteps);
   return (
-    <div className={styles.guide}>
+    <section id="guide" className={styles.guide}>
       <div className="container">
         <div className={styles.guideWrapper}>
           <div className={styles.guideTitleWrapper}>
@@ -79,7 +79,7 @@ const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

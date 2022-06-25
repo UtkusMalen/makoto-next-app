@@ -4,7 +4,7 @@ import styles from "./About.module.scss";
 
 const About = ({ articles }) => {
   return (
-    <div className="container">
+    <section id="about" className="container">
       <div className={styles.about}>
         {articles.map((article) => (
           <AboutItem
@@ -14,7 +14,7 @@ const About = ({ articles }) => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

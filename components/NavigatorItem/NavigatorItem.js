@@ -17,7 +17,7 @@ const NavigatorItem = ({ title, type, icon, href }) => {
             <div
               className={
                 type === "link"
-                  ? styles.navigatorItemLink
+                  ? styles.navigatorItemLinkIcon
                   : styles.navigatorItemArrow
               }
             />

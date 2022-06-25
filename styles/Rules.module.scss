@@ -18,9 +18,27 @@
     align-self: flex-start;
     top: 60px;
 
-    @media (max-width: $breakpoint-laptop) {
-      position: inherit;
+    &::after {
+      content: "";
       width: 100%;
+      position: absolute;
+      height: 30px;
+
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(17, 17, 17, 0) 0%,
+        rgba(17, 17, 17, 0.5) 100%
+      );
+      border-radius: 0px 0px 19px 19px;
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+      position: relative;
+      width: 100%;
+
+      top: 0;
     }
 
     .sidebarTitle {
@@ -47,6 +65,7 @@
       max-height: calc(100vh - 270px);
       overflow-y: auto;
       border-radius: 20px;
+      position: relative;
 
       @media (max-width: $breakpoint-laptop) {
         max-height: 300px;
@@ -59,8 +78,6 @@
         margin: 0;
         list-style: none;
         padding: 0;
-  
-        
       }
     }
 
@@ -68,11 +85,11 @@
       background: transparent;
       width: 14px;
     }
-  
+
     ::-webkit-scrollbar {
       width: 30px;
     }
-  
+
     ::-webkit-scrollbar-thumb {
       width: 6px;
       border: 12px solid rgba(0, 0, 0, 0);

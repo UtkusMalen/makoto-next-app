@@ -144,8 +144,9 @@
             width: 100%;
             background: #fff;
             transition-property: transform, top;
-            transition-delay: 0ms, 160ms;
+            transition-delay: 0ms, 70ms;
             transition-duration: 200ms;
+            transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
             top: -4px;
           }
           .line2 {
@@ -154,8 +155,9 @@
             width: 100%;
             background: #fff;
             transition-property: transform, top;
-            transition-delay: 0ms, 160ms;
+            transition-delay: 0ms, 70ms;
             transition-duration: 200ms;
+            transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
             top: 4px;
           }
         }
@@ -167,15 +169,17 @@
         top: 0 !important;
         transform: rotateZ(45deg);
         transition-property: top, transform;
-        transition-delay: 0ms, 160ms;
-        transition-duration: 200ms;
+        transition-delay: 70ms, 0ms !important;
+        transition-delay: 260ms;
+        transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
       }
       .line2 {
         top: 0 !important;
         transform: rotateZ(-45deg);
         transition-property: top, transform;
-        transition-delay: 0ms, 160ms;
-        transition-duration: 200ms;
+        transition-delay: 70ms, 0ms !important;
+        transition-delay: 260ms;
+        transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
       }
     }
   }

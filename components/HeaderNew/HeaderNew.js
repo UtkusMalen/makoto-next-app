@@ -10,18 +10,21 @@ const navigation = [
     title: "Главная",
     path: "/",
     secondPath: "",
+    anchor: false,
   },
   {
     id: 2,
     title: "О нас",
-    path: "/about",
+    path: "/#about",
     secondPath: "",
+    anchor: false,
   },
   {
     id: 3,
     title: "Правила",
     path: "/rules",
     secondPath: "",
+    anchor: false,
   },
 
   {
@@ -29,6 +32,7 @@ const navigation = [
     title: "Вики",
     path: "/wiki",
     secondPath: "/navigator",
+    anchor: false,
   },
 ];
 
@@ -61,6 +65,8 @@ const HeaderNew = () => {
     <div
       className={` ${styles.containerNav} ${burger ? styles.active : ""} `}
       style={{
+        webkitBackdropFilter:
+          navbar && !burger ? "saturate(130%) blur(15px)" : "",
         backdropFilter: navbar && !burger ? "saturate(130%) blur(15px)" : "",
         background: navbar && !burger ? "rgba(20, 20, 20, 0.5)" : "",
       }}>
@@ -88,22 +94,36 @@ const HeaderNew = () => {
               <a className={styles.linkLogo} href="#"></a>
             </li>
 
-            {navigation.map(({ id, title, path, secondPath }, index) => (
-              <li
-                onClick={() => {
-                  setBurger(false);
-                }}
-                key={id}>
-                <Link href={path + secondPath}>
-                  <a
-                    className={
-                      "/" + pathFormatted[1] === path ? styles.active : null
-                    }>
-                    {title}
-                  </a>
-                </Link>
-              </li>
-            ))}
+            {navigation.map(
+              ({ id, title, path, secondPath, anchor }, index) => (
+                <li
+                  onClick={() => {
+                    setBurger(false);
+                  }}
+                  key={id}>
+                  <Link href={path + secondPath}>
+                    <a
+                      className={
+                        "/" + pathFormatted[1] === path ? styles.active : null
+                      }>
+                      {title}
+                    </a>
+                  </Link>
+                </li>
+              )
+            )}
+            <Link href={"/#guide"}>
+              <a>
+                <Button
+                  bgColor="ffffff"
+                  textColor="111111"
+                  shade="light"
+                  padding={[8, 20]}
+                  fontSize={12}>
+                  Начать играть
+                </Button>
+              </a>
+            </Link>
           </ul>
         </nav>
       </div>

@@ -17,6 +17,15 @@
     @media (max-width: $breakpoint-large) {
       font-size: 34px;
     }
+    @media (max-width: $breakpoint-laptop) {
+      font-size: 30px;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 28px;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 26px;
+    }
   }
 
   .endWrapper {
@@ -24,17 +33,21 @@
       margin: 0;
       font-weight: 700;
       font-size: 18px;
-      line-height: 100%;
-      letter-spacing: 0.05em;
       color: #ffffff;
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 16px;
+      }
     }
     .endText {
       margin: 10px 0 30px 0;
       font-weight: 400;
       font-size: 18px;
-      line-height: 21px;
-      letter-spacing: 0.05em;
       color: #dedede;
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 16px;
+      }
     }
     .endImage {
       width: 100%;
@@ -49,6 +62,10 @@
       -ms-border-radius: 20px;
       -o-border-radius: 20px;
       margin: 30px 0;
+
+      @media (max-width: $breakpoint-tablet) {
+        background-position: initial;
+      }
     }
   }
 }

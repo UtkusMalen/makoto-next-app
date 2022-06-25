@@ -19,7 +19,7 @@ const Rules = ({ rules, ruleContainers }) => {
       <Head>
         <title>{rules ? title : "Makoto"}</title>
       </Head>
-      <div className="container-max">
+      <div className="container">
         <div className={styles.rulesWrapper}>
           <div className={styles.sidebar}>
             <h2 className={styles.sidebarTitle}>Правила сервера</h2>
