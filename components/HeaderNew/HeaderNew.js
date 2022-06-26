@@ -117,7 +117,11 @@ const HeaderNew = () => {
               )
             )}
 
-            <li className={styles.navbarButton}>
+            <li
+              onClick={() => {
+                setBurger(false);
+              }}
+              className={styles.navbarButton}>
               <Link href={"/#guide"}>
                 <a>
                   <Button
