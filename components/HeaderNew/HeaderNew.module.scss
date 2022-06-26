@@ -42,6 +42,16 @@
         }
       }
     }
+
+    .navbarButton {
+      align-self: flex-start;
+      width: auto;
+      margin-top: 20px;
+      a {
+        opacity: 1;
+        border: none;
+      }
+    }
   }
 
   .mobileNav {
@@ -53,6 +63,8 @@
   @media (max-width: 768px) {
     .desktopNav {
       flex-direction: column;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;
       position: fixed;
       top: 0;
       left: 0;
@@ -60,7 +72,7 @@
       height: 44px;
       background: rgba(44, 44, 44, 0.1);
       justify-content: start;
-      overflow: hidden;
+      overflow: auto;
       z-index: -1;
       backdrop-filter: blur(2px);
       border-bottom: 0.2px solid rgba(255, 255, 255, 0.067);
@@ -68,11 +80,16 @@
         height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
         backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
 
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
       li {
         width: 100%;
         padding: 0 32px;
-        transition: 0.1s all ease-in-out;
+        transition: opacity 0.1s ease-in-out 0.1s;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        opacity: 0;
 
         .linkLogo {
           display: none;
@@ -80,6 +97,10 @@
 
         &:first-child {
           margin-top: 120px;
+        }
+
+        &:last-child {
+          margin-bottom: 120px;
         }
 
         a {
@@ -104,6 +125,7 @@
     &.active .desktopNav li {
       transform: translateX(0);
       transition: 0.1s all ease-in-out;
+      opacity: 1;
     }
 
     &.active .desktopNav {

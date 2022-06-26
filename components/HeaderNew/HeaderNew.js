@@ -89,7 +89,11 @@ const HeaderNew = () => {
             </li>
           </ul>
 
-          <ul className={styles.desktopNav}>
+          <ul
+            style={{
+              overflow: burger ? "auto" : "hidden",
+            }}
+            className={styles.desktopNav}>
             <li>
               <a className={styles.linkLogo} href="#"></a>
             </li>
@@ -112,18 +116,21 @@ const HeaderNew = () => {
                 </li>
               )
             )}
-            <Link href={"/#guide"}>
-              <a>
-                <Button
-                  bgColor="ffffff"
-                  textColor="111111"
-                  shade="light"
-                  padding={[8, 20]}
-                  fontSize={12}>
-                  Начать играть
-                </Button>
-              </a>
-            </Link>
+
+            <li className={styles.navbarButton}>
+              <Link href={"/#guide"}>
+                <a>
+                  <Button
+                    bgColor="ffffff"
+                    textColor="111111"
+                    shade="light"
+                    padding={[8, 20]}
+                    fontSize={12}>
+                    Начать играть
+                  </Button>
+                </a>
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
