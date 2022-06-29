@@ -59,6 +59,15 @@ const Footer = () => {
             <div className={styles.footerCopyright}>
               Copyright 2022 Makoto. All rights reserved.
             </div>
+            <div className={styles.author}>
+              Created by{" "}
+              <a
+                href="https://github.com/solodovnykov"
+                target="_blank"
+                rel="noreferrer">
+                solodovnykov
+              </a>
+            </div>
           </div>
           <div className={styles.footerImage} />
         </div>

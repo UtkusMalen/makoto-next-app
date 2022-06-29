@@ -44,9 +44,8 @@
     }
 
     .navbarButton {
-      align-self: flex-start;
       width: auto;
-      margin-top: 20px;
+      
       a {
         opacity: 1;
         border: none;
@@ -82,6 +81,11 @@
 
       &::-webkit-scrollbar {
         display: none;
+      }
+
+      .navbarButton {
+        align-self: flex-start;
+        margin-top: 20px;
       }
 
       li {

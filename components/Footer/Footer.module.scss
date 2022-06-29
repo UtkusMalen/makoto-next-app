@@ -121,7 +121,7 @@
               }
 
               .footerNavLink {
-                font-family: "NoirPro", sans-serif;
+                font-family: "Gilroy", sans-serif;
                 font-weight: normal;
                 font-size: 16px;
                 line-height: 100%;
@@ -175,15 +175,10 @@
 
   .footerCopyright {
     position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    font-family: "NoirPro", sans-serif;
-    font-weight: 300;
+    left: 0;
+    bottom: 10px;
+    font-family: "Gilroy", sans-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 100%;
     letter-spacing: 0.1em;
@@ -194,5 +189,20 @@
     @media (max-width: $breakpoint-mobile) {
       font-size: 12px;
     }
+  }
+
+  .author {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    font-family: "Gilroy", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.1em;
+    color: $footer-nav-author-color;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
   }
 }
