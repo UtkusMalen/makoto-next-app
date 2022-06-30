@@ -86,10 +86,12 @@ const MainText = ({ pageData, serverData }) => {
                 }px)`,
               }}
               className={styles.playersNumber}>
-              +
-              {serverData.players.online >= 6
-                ? serverData.players.online - 6
-                : 0}
+              <p>
+                +
+                {serverData.players.online >= 6
+                  ? serverData.players.online - 6
+                  : 0}
+              </p>
             </div>
           </div>
         </div>

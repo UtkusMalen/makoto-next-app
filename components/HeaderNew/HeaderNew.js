@@ -34,6 +34,13 @@ const navigation = [
     secondPath: "/navigator",
     anchor: false,
   },
+  {
+    id: 5,
+    title: "Магазин",
+    path: "https://donate.makotomc.ru/",
+    secondPath: "",
+    anchor: false,
+  },
 ];
 
 const HeaderNew = () => {
@@ -65,7 +72,7 @@ const HeaderNew = () => {
     <div
       className={` ${styles.containerNav} ${burger ? styles.active : ""} `}
       style={{
-        webkitBackdropFilter:
+        WebkitBackdropFilter:
           navbar && !burger ? "saturate(130%) blur(15px)" : "",
         backdropFilter: navbar && !burger ? "saturate(130%) blur(15px)" : "",
         background: navbar && !burger ? "rgba(20, 20, 20, 0.5)" : "",
@@ -74,7 +81,9 @@ const HeaderNew = () => {
         <nav className={styles.navigation}>
           <ul className={styles.mobileNav}>
             <li>
-              <a className={styles.linkLogo} href="#"></a>
+              <Link href="/">
+                <a className={styles.linkLogo}></a>
+              </Link>
             </li>
 
             <li>
@@ -95,7 +104,9 @@ const HeaderNew = () => {
             }}
             className={styles.desktopNav}>
             <li>
-              <a className={styles.linkLogo} href="#"></a>
+              <Link href="/">
+                <a className={styles.linkLogo}></a>
+              </Link>
             </li>
 
             {navigation.map(
@@ -122,18 +133,15 @@ const HeaderNew = () => {
                 setBurger(false);
               }}
               className={styles.navbarButton}>
-              <Link href={"/#guide"}>
-                <a>
-                  <Button
-                    bgColor="ffffff"
-                    textColor="111111"
-                    shade="light"
-                    padding={[8, 20]}
-                    fontSize={12}>
-                    Начать играть
-                  </Button>
-                </a>
-              </Link>
+              <Button
+                url="/#guide"
+                bgColor="ffffff"
+                textColor="111111"
+                shade="light"
+                padding={[8, 20]}
+                fontSize={12}>
+                Начать играть
+              </Button>
             </li>
           </ul>
         </nav>

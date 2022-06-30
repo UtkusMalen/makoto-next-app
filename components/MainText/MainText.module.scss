@@ -218,6 +218,11 @@
     -moz-transform: translateX(-42px);
     -ms-transform: translateX(-42px);
     -o-transform: translateX(-42px);
+
+    p {
+      margin: 0;
+      transform: translateX(-2px);
+    }
   }
   .text {
     font-family: "NoirPro", sans-serif;

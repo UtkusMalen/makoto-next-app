@@ -8,6 +8,7 @@ const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
     return arr.sort((a, b) => (a.fields.id > b.fields.id ? 1 : -1));
   }
   SortAscending(guideSteps);
+  console.log(guideSteps[1].fields.image.fields.file.details.image.height);
   return (
     <section id="guide" className={styles.guide}>
       <div className="container">
@@ -51,8 +52,12 @@ const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
                   <div className={styles.guideStepImage}>
                     <Image
                       alt="Image"
-                      width={500}
-                      height={500}
+                      width={
+                        step.fields.image.fields.file.details.image.width / 2
+                      }
+                      height={
+                        step.fields.image.fields.file.details.image.height / 2
+                      }
                       src={`https:${step.fields.image.fields.file.url}`}
                     />
                   </div>
@@ -64,12 +69,16 @@ const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
           </div>
           <div className={styles.guideButtonsWrapper}>
             <Button
+              url="https://discord.com/invite/yzBCF4V"
+              target="_blank"
               icon="discordButton.svg"
               borderColor="ECDB85"
               textColor="ECDB85">
               Discord Сервер
             </Button>
             <Button
+              url="https://donate.makotomc.ru/"
+              target="_blank"
               icon="shopButtonOutline.svg"
               bgColor="ECDB85"
               textColor="111"

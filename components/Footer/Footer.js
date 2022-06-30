@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
@@ -20,19 +21,19 @@ const Footer = () => {
                 <h4 className={styles.footerNavTitle}>Навигация</h4>
                 <ul className={styles.footerNavList}>
                   <li className={styles.footerNavItem}>
-                    <a href="#" className={styles.footerNavLink}>
-                      Главная
-                    </a>
+                    <Link href="/">
+                      <a className={styles.footerNavLink}>Главная</a>
+                    </Link>
                   </li>
                   <li className={styles.footerNavItem}>
-                    <a href="#" className={styles.footerNavLink}>
-                      О нас
-                    </a>
+                    <Link href="/#about">
+                      <a className={styles.footerNavLink}>О нас</a>
+                    </Link>
                   </li>
                   <li className={styles.footerNavItem}>
-                    <a href="#" className={styles.footerNavLink}>
-                      Правила
-                    </a>
+                    <Link href="/rules">
+                      <a className={styles.footerNavLink}>Правила</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -42,13 +43,21 @@ const Footer = () => {
                 <ul className={styles.footerNavList}>
                   <li className={styles.footerNavItem}>
                     <div className={styles.footerNavIcon} />
-                    <a href="#" className={styles.footerNavLink}>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://discord.com/invite/yzBCF4V"
+                      className={styles.footerNavLink}>
                       Дискорд
                     </a>
                   </li>
                   <li className={styles.footerNavItem}>
                     <div className={styles.footerNavIcon} />
-                    <a href="#" className={styles.footerNavLink}>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://vk.com/makotomc"
+                      className={styles.footerNavLink}>
                       ВКонтакте
                     </a>
                   </li>
