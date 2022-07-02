@@ -6,7 +6,23 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    padding: 14px 8px;
+    transition: 0.1s all ease-in-out;
+      -webkit-transition: 0.1s all ease-in-out;
+      -moz-transition: 0.1s all ease-in-out;
+      -ms-transition: 0.1s all ease-in-out;
+      -o-transition: 0.1s all ease-in-out;
+
+    &:hover {
+      border-radius: 6px;
+      background: #363636;
+      transition: 0.1s all ease-in-out;
+      -webkit-transition: 0.1s all ease-in-out;
+      -moz-transition: 0.1s all ease-in-out;
+      -ms-transition: 0.1s all ease-in-out;
+      -o-transition: 0.1s all ease-in-out;
+    }
 
     @media (max-width: $breakpoint-mobile) {
       align-items: flex-start;
@@ -14,24 +30,24 @@
 
     .sidebarItemText {
       margin: 0;
-
-      @media (max-width: $breakpoint-laptop) {
-        font-size: 18px;
-      }
+      font-size: 14px;
+      font-weight: 400;
+      color: $main-secondary-text-color;
+      
     }
 
     .sidebarEmoji {
-      min-width: 30px;
-      height: 30px;
+      min-width: 16px;
+      height: 16px;
       background-image: url("/emoji/emoji4.png");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
 
-      @media (max-width: $breakpoint-mobile) {
-        min-width: 26px;
-        height: 26px;
-      }
+      // @media (max-width: $breakpoint-mobile) {
+      //   min-width: 26px;
+      //   height: 26px;
+      // }
     }
   }
 }

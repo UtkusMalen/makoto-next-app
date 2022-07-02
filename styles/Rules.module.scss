@@ -18,20 +18,22 @@
     align-self: flex-start;
     top: 60px;
 
-    &::after {
-      content: "";
-      width: 100%;
-      position: absolute;
-      height: 30px;
+    @media (max-width: $breakpoint-laptop) {
+      &::after {
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 30px;
 
-      left: 0;
-      bottom: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(17, 17, 17, 0) 0%,
-        rgba(17, 17, 17, 0.5) 100%
-      );
-      border-radius: 0px 0px 19px 19px;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(17, 17, 17, 0) 0%,
+          rgba(17, 17, 17, 0.5) 100%
+        );
+        border-radius: 0px 0px 19px 19px;
+      }
     }
 
     @media (max-width: $breakpoint-laptop) {
@@ -57,13 +59,18 @@
     }
 
     .sidebarListWrapper {
-      padding: 30px 26px;
-      background: rgba(17, 17, 17, 0.05);
-      border: 1px solid #868686;
+      max-width: 300px;
+      padding: 14px;
+
       box-sizing: border-box;
-      backdrop-filter: blur(20px);
+
       max-height: calc(100vh - 270px);
       overflow-y: auto;
+      background: rgba(14, 14, 14, 0.35);
+      border: 1px solid #2d2d2d;
+      backdrop-filter: blur(26px);
+      /* Note: backdrop-filter has minimal browser support */
+
       border-radius: 20px;
       position: relative;
 
@@ -74,7 +81,6 @@
       .sidebarList {
         display: flex;
         flex-direction: column;
-        gap: 30px;
         margin: 0;
         list-style: none;
         padding: 0;

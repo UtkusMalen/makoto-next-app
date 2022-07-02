@@ -16,8 +16,8 @@
 
   .ruleItemWrapper {
     padding: 24px 20px;
-    background: rgba(17, 17, 17, 0.05);
-    border: 1px solid #868686;
+    background: rgba(14, 14, 14, 0.35);
+    border: 1px solid #2d2d2d;
     box-sizing: border-box;
     backdrop-filter: blur(20px);
     /* Note: backdrop-filter has minimal browser support */
@@ -61,14 +61,12 @@
 
           .itemText {
             font-weight: normal;
-            font-size: 18px;
+            font-size: 16px;
             line-height: auto;
 
             color: $main-font-color;
 
-            @media (max-width: $breakpoint-laptop) {
-              font-size: 16px;
-            }
+            
           }
 
           .itemPenalty {
@@ -87,13 +85,11 @@
             }
             .itemPenaltyText {
               font-weight: normal;
-              font-size: 18px;
+              font-size: 16px;
               line-height: auto;
               color: $main-secondary-text-color;
 
-              @media (max-width: $breakpoint-laptop) {
-                font-size: 16px;
-              }
+          
 
               .itemPenaltyColor {
                 color: #ec8585;
