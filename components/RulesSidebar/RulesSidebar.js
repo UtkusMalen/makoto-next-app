@@ -4,7 +4,14 @@ import { Link } from "react-scroll";
 const RulesSidebar = ({ title, emoji, slug }) => {
   return (
     <li className={styles.sidebarItemWrapper}>
-      <Link to={slug} smooth={true}>
+      <Link
+        activeClass={styles.sidebarItemActive}
+        to={slug}
+        spy={true}
+        offset={-60}
+        smooth={true}
+        
+        duration={500}>
         <div className={styles.sidebarItem}>
           <div
             className={styles.sidebarEmoji}

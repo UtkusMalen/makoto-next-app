@@ -24,7 +24,7 @@ const Rules = ({ rules, ruleContainers }) => {
           <div className={styles.sidebar}>
             <h2 className={styles.sidebarTitle}>Правила сервера</h2>
             <div className={styles.sidebarListWrapper}>
-              <ul className={styles.sidebarList}>
+              <ul className={styles.sidebarList} id="sidebarList">
                 {ruleContainers.map((rule) => (
                   <RulesSidebar
                     key={rule.fields.slug}

@@ -3,7 +3,7 @@
 .rulesWrapper {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 28px;
   margin: 0 0 100px 0;
 
   @media (max-width: $breakpoint-laptop) {
@@ -13,7 +13,7 @@
   .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 28px;
     position: sticky;
     align-self: flex-start;
     top: 60px;
@@ -47,19 +47,15 @@
       margin: 0;
       font-family: "NoirPro", sans-serif;
       font-weight: bold;
-      font-size: 36px;
+      font-size: 24px;
       line-height: 100%;
       letter-spacing: 0.05em;
       color: $main-font-color;
       white-space: nowrap;
-
-      @media (max-width: $breakpoint-laptop) {
-        font-size: 30px;
-      }
     }
 
     .sidebarListWrapper {
-      max-width: 300px;
+      width: 300px;
       padding: 14px;
 
       box-sizing: border-box;
@@ -68,13 +64,14 @@
       overflow-y: auto;
       background: rgba(14, 14, 14, 0.35);
       border: 1px solid #2d2d2d;
-      backdrop-filter: blur(26px);
+      backdrop-filter: saturate(130%) blur(15px);
       /* Note: backdrop-filter has minimal browser support */
 
       border-radius: 20px;
       position: relative;
 
       @media (max-width: $breakpoint-laptop) {
+        width: 100%;
         max-height: 300px;
       }
 
