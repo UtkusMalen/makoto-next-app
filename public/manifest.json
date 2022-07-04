@@ -1,0 +1,32 @@
+{
+    "theme_color": "#ECDB85",
+    "background_color": "#111",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Makoto Minecraft Server",
+    "short_name": "Makoto",
+    "description": "Makoto — ванильный сервер по Майнкрафт, который ты так долго искал. Никаких приватов и  телепортов, всё как в одиночной игре.",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
