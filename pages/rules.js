@@ -4,6 +4,7 @@ import RulesSidebar from "../components/RulesSidebar/RulesSidebar";
 import client from "../contentful";
 import styles from "../styles/Rules.module.scss";
 import items from "../utils/rulesData";
+import { animateScroll } from "react-scroll";
 
 const Rules = ({ rules, ruleContainers }) => {
   const { title } = rules.fields;
@@ -14,7 +15,9 @@ const Rules = ({ rules, ruleContainers }) => {
   }
   SortAscending(ruleContainers);
 
-  const onScroll = (e) => console.log(e);
+  const pageUp = () => {
+    animateScroll.scrollToTop();
+  };
 
   return (
     <>
@@ -23,13 +26,13 @@ const Rules = ({ rules, ruleContainers }) => {
       </Head>
       <div className="container">
         <div className={styles.rulesWrapper}>
+          <div onClick={pageUp} className={styles.rulesPageUp}>
+            <div className={styles.rulesArrow}></div>
+          </div>
           <div className={styles.sidebar}>
             <h2 className={styles.sidebarTitle}>Правила сервера</h2>
             <div className={styles.sidebarListWrapper}>
-              <ul
-                onScroll={onScroll}
-                className={styles.sidebarList}
-                id="sidebarList">
+              <ul className={styles.sidebarList} id="sidebarList">
                 {ruleContainers.map((rule) => (
                   <RulesSidebar
                     key={rule.fields.slug}

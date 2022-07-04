@@ -37,7 +37,7 @@ const DocsPage = ({ portalGuide }) => {
               </div>
               <div className={styles.guideTextWrapper}>
                 <h4 className={styles.guideTextTitle}>
-                  {guideItem.fields.title}
+                  {guideItem.fields.title.toUpperCase()}
                 </h4>
                 <div className={styles.guideText}>
                   {documentToReactComponents(guideItem.fields.text)}

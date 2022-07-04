@@ -5,6 +5,36 @@
   flex-direction: row;
   gap: 28px;
   margin: 0 0 100px 0;
+  position: relative;
+
+  @media (max-width: $breakpoint-laptop) {
+    .rulesPageUp {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      right: 10px;
+      bottom: 20px;
+      border: 1px solid #2d2d2d;
+      background: rgba(14, 14, 14, 0.35);
+      backdrop-filter: saturate(130%) blur(2px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .rulesArrow {
+        width: 16px;
+        height: 16px;
+        background-image: url("/icons/arrowWhite.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+        transform: rotate(180deg) translateY(1px);
+      }
+    }
+  }
 
   @media (max-width: $breakpoint-laptop) {
     flex-direction: column;

@@ -1,18 +1,21 @@
 import styles from "./RulesSidebar.module.scss";
 import { Link } from "react-scroll";
 
-const RulesSidebar = ({ title, emoji, slug }) => {
+const RulesSidebarNew = ({ title, emoji, slug }) => {
+  const clickHandler = (event) => {
+    event.preventDefault();
+    const location = document.getElementById(slug).offsetTop;
+
+    window.scrollTo({
+      left: 0,
+      top: location + 40,
+    });
+  };
+
+
   return (
     <li className={styles.sidebarItemWrapper}>
-      <Link
-        activeClass={styles.sidebarItemActive}
-        to={slug}
-        spy={true}
-        offset={-60}
-        isDynamic={true}
-        smooth={true}
-        hashSpy={true}
-        duration={500}>
+      <a href={`/rules#${slug}`} onClick={clickHandler}>
         <div className={styles.sidebarItem}>
           <div
             className={styles.sidebarEmoji}
@@ -22,9 +25,9 @@ const RulesSidebar = ({ title, emoji, slug }) => {
           />
           <h3 className={styles.sidebarItemText}>{title}</h3>
         </div>
-      </Link>
+      </a>
     </li>
   );
 };
 
-export default RulesSidebar;
+export default RulesSidebarNew;
