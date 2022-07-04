@@ -1,7 +1,6 @@
 import styles from "./RuleItem.module.scss";
 
 const RuleItem = ({ ruleList, title, slug }) => {
-  console.log(ruleList);
   return (
     <section id={slug} className={styles.ruleItem}>
       <h2 className={styles.ruleItemTitle}>{title}</h2>

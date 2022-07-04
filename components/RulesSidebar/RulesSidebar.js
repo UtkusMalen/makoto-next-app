@@ -9,8 +9,8 @@ const RulesSidebar = ({ title, emoji, slug }) => {
         to={slug}
         spy={true}
         offset={-60}
-        smooth={true}
-        
+        isDynamic={true}
+        hashSpy={true}
         duration={500}>
         <div className={styles.sidebarItem}>
           <div

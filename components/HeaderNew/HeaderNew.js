@@ -57,7 +57,7 @@ const HeaderNew = () => {
   useEffect(() => {
     let listener = document.addEventListener("scroll", (e) => {
       let scrolled = window.scrollY;
-      if (scrolled >= 120) {
+      if (scrolled >= 60) {
         setNavbar(true);
       } else {
         setNavbar(false);

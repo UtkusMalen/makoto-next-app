@@ -48,8 +48,8 @@
       font-family: "NoirPro", sans-serif;
       font-weight: bold;
       font-size: 24px;
-      line-height: 100%;
-      letter-spacing: 0.05em;
+      // line-height: 100%;
+      // letter-spacing: 0.05em;
       color: $main-font-color;
       white-space: nowrap;
     }
@@ -105,7 +105,7 @@
   .rulesitemsList {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    // gap: 60px;
   }
 
   .sticky {

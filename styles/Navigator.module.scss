@@ -21,18 +21,18 @@
       .navigatorBlockTitle {
         font-family: "NoirPro", sans-serif;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 24px;
         line-height: 100%;
         letter-spacing: 0.05em;
         color: $main-font-color;
         margin: 0;
 
         @media (max-width: $breakpoint-mobile) {
-          font-size: 30px;
+          font-size: 22px;
         }
 
         @media (max-width: $breakpoint-large) {
-          font-size: 34px;
+          font-size: 20px;
         }
       }
 
@@ -42,11 +42,11 @@
         // display: grid;
         // grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 37px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 28px;
 
         @media (max-width: $breakpoint-extra-large) {
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
 
         @media (max-width: $breakpoint-large) {
