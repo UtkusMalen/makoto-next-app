@@ -4,14 +4,10 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 140px;
+  gap: 28px;
 
   p {
     margin: 0;
-  }
-
-  @media (max-width: $breakpoint-large) {
-    gap: 60px;
   }
 
   @media (max-width: $breakpoint-tablet) {
@@ -55,24 +51,17 @@
       align-items: center;
 
       .aboutTitleEmoji {
-        min-width: 40px;
-        height: 40px;
+        min-width: 28px;
+        height: 28px;
         background-image: url("/emoji/emoji1.png");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         align-self: flex-start;
-        margin-top: 10px;
 
-        @media (max-width: $breakpoint-tablet) {
-          min-width: 34px;
-          height: 34px;
-          margin-top: 12px;
-        }
         @media (max-width: $breakpoint-mobile) {
-          min-width: 28px;
-          height: 28px;
-          margin-top: 15px;
+          min-width: 20px;
+        height: 20px;
         }
       }
 
@@ -80,23 +69,17 @@
         white-space: nowrap;
         font-family: "NoirPro", sans-serif;
         font-weight: normal;
-        font-size: 40px;
-        line-height: 57px;
-        /* identical to box height */
-
-        letter-spacing: 0.05em;
+        font-size: 24px;
         margin: 0 0 0 15px;
 
         @media (max-width: $breakpoint-large) {
           white-space: normal;
         }
         @media (max-width: $breakpoint-tablet) {
-          font-size: 28px;
           margin: 0 0 0 10px;
         }
 
         @media (max-width: $breakpoint-mobile) {
-          font-size: 24px;
           margin: 0 0 0 10px;
         }
       }
@@ -104,15 +87,11 @@
 
     .aboutDescription {
       font-weight: normal;
-      font-size: 18px;
-      line-height: 150%;
+      font-size: 16px;
+      line-height: 130%;
       letter-spacing: 0.05em;
       margin: 17px 0 60px 0;
       color: $main-secondary-text-color;
-
-      @media (max-width: $breakpoint-mobile) {
-        font-size: 16px;
-      }
     }
   }
 }

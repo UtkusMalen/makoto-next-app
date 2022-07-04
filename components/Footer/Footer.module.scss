@@ -5,6 +5,7 @@
   width: 100%;
   padding: 35px 0;
   overflow: hidden;
+  border-top: 0.2px solid rgba(255, 255, 255, 0.067);
 
   .footerWrapper {
     display: flex;
@@ -16,6 +17,15 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      width: 100%;
+
+      .footerLine {
+        height: 0.2px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.067);
+        margin: 28px 0 0px;
+      }
+
       .footerLogoWrapper {
         display: flex;
         flex-direction: row;
@@ -40,14 +50,10 @@
         .footerLogoName {
           font-family: "NoirPro", sans-serif;
           font-weight: bold;
-          font-size: 35px;
+          font-size: 24px;
           line-height: 100%;
           letter-spacing: 0.1em;
           color: #ffffff;
-
-          @media (max-width: $breakpoint-mobile) {
-            font-size: 25px;
-          }
         }
       }
 
@@ -55,7 +61,7 @@
         display: flex;
         flex-direction: row;
         gap: 150px;
-        margin: 50px 0 100px 0;
+        margin: 28px 0 100px 0;
 
         @media (max-width: $breakpoint-laptop) {
           gap: 80px;
@@ -73,14 +79,11 @@
           .footerNavTitle {
             font-family: "NoirPro", sans-serif;
             font-weight: 500;
-            font-size: 20px;
+            font-size: 16px;
             line-height: 100%;
             letter-spacing: 0.1em;
             color: $footer-nav-title-color;
-
-            @media (max-width: $breakpoint-mobile) {
-              font-size: 16px;
-            }
+            margin: 0 0 14px 0;
           }
 
           .footerNavList {
@@ -105,19 +108,12 @@
               }
 
               .footerNavIcon {
-                min-width: 20px;
-                height: 20px;
-
+                min-width: 16px;
+                height: 16px;
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
-                opacity: .8;
-                
-
-                @media (max-width: $breakpoint-mobile) {
-                  min-width: 16px;
-                  height: 16px;
-                }
+                opacity: 0.8;
               }
 
               .footerNavLink {
@@ -125,7 +121,6 @@
                 font-weight: normal;
                 font-size: 16px;
                 line-height: 100%;
-                letter-spacing: 0.1em;
                 color: $footer-nav-link-color;
 
                 @media (max-width: $breakpoint-mobile) {
@@ -139,7 +134,7 @@
 
       .footerDescription {
         font-weight: normal;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 100%;
         letter-spacing: 0.1em;
         color: #c6c6c6;
@@ -169,7 +164,7 @@
     pointer-events: none;
 
     @media (max-width: $breakpoint-mobile) {
-      transform: translateX(170px) scale(.7);
+      transform: translateX(170px) scale(0.7);
     }
   }
 
@@ -179,16 +174,12 @@
     bottom: 10px;
     font-family: "Gilroy", sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 100%;
     letter-spacing: 0.1em;
     color: $footer-nav-copyright-color;
     white-space: nowrap;
     text-align: center;
-
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 12px;
-    }
   }
 
   .author {

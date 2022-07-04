@@ -16,6 +16,8 @@ const Footer = () => {
               Майнкрафт, который мы заслужили
             </div>
 
+            <div className={styles.footerLine}></div>
+
             <div className={styles.footerNavWrapper}>
               <div className={styles.footerNavBlock}>
                 <h4 className={styles.footerNavTitle}>Навигация</h4>
