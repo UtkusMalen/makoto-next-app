@@ -7,21 +7,7 @@ const Dropdown = ({ data, width }) => {
   console.log(data.items.items[0].coordinates.replace(/,/g, " | "));
 
   return (
-    <div
-      style={{
-        borderColor:
-          data.color === "red"
-            ? "#E57272"
-            : data.color === "blue"
-            ? "#72A7E5"
-            : data.color === "green"
-            ? "#B9E572"
-            : data.color === "yellow"
-            ? "#E5D372"
-            : "#2d2d2d",
-      }}
-      onClick={() => setOpen(!open)}
-      className={styles.dropdownBranch}>
+    <div onClick={() => setOpen(!open)} className={styles.dropdownBranch}>
       <div className={styles.dropdownBranchHeader}>
         <h4
           style={{
