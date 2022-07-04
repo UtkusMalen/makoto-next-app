@@ -18,7 +18,7 @@ const Dropdown = ({ data, width }) => {
             ? "#B9E572"
             : data.color === "yellow"
             ? "#E5D372"
-            : "#E7E7E7",
+            : "#2d2d2d",
       }}
       onClick={() => setOpen(!open)}
       className={styles.dropdownBranch}>
