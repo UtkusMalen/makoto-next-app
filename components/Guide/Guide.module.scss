@@ -15,8 +15,8 @@
       margin: 0 auto;
 
       .guideTitleEmoji {
-        min-width: 40px;
-        height: 40px;
+        min-width: 28px;
+        height: 28px;
         background-image: url("/emoji/emoji1.png");
         background-position: center;
         background-size: contain;
@@ -31,19 +31,16 @@
       .guideTitleText {
         font-family: "NoirPro", sans-serif;
         font-weight: normal;
-        font-size: 40px;
-        line-height: 57px;
-        letter-spacing: 0.05em;
+        font-size: 24px;
+
         color: $main-font-color;
         margin: 0 0 0 15px;
 
         @media (max-width: $breakpoint-tablet) {
-          font-size: 28px;
           margin: 0 0 0 8px;
         }
 
         @media (max-width: $breakpoint-tablet) {
-          font-size: 24px;
           margin: 0 0 0 8px;
         }
       }
@@ -60,7 +57,7 @@
 
     .guideStepsWrapper {
       margin: 40px auto 0 auto;
-      max-width: 775px;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -90,8 +87,8 @@
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
-          top: 0;
-          right: -60px;
+          top: 40px;
+          right: -80px;
 
           @media (max-width: $breakpoint-laptop) {
             display: none;
@@ -129,9 +126,7 @@
 
           .guideStepText {
             font-weight: normal;
-            font-size: 18px;
-            line-height: 150%;
-            letter-spacing: 0.05em;
+            font-size: 16px;
             color: $main-secondary-text-color;
             margin: 0 0 0 15px;
 

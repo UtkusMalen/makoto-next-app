@@ -11,8 +11,8 @@ const Button = ({
   borderColor,
   icon,
   serverIcon,
-  padding = [13, 33],
-  fontSize=14
+  padding,
+  fontSize,
 }) => {
   return (
     <a
@@ -24,16 +24,16 @@ const Button = ({
         backgroundColor: borderColor ? `transparent` : `#${bgColor}`,
         color: `#${textColor}`,
         border: borderColor ? `1px solid #${borderColor}` : ``,
-        padding: `${padding[0]}px ${padding[1]}px`,
-        fontSize: `${fontSize}px`
+        padding: padding ? `${padding[0]}px ${padding[1]}px` : "",
+        fontSize: fontSize ? `${fontSize}px` : "",
       }}>
       {icon ? (
         <div className={styles.buttonIcon}>
           <Image
             src={`/icons/${icon}`}
             alt="Button Icon"
-            width={20}
-            height={20}
+            width={16}
+            height={16}
           />
         </div>
       ) : (
@@ -44,8 +44,8 @@ const Button = ({
           <Image
             src={`http:${serverIcon.fields.file.url}`}
             alt="Button Icon"
-            width={20}
-            height={20}
+            width={16}
+            height={16}
           />
         </div>
       ) : (
