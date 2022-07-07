@@ -3,15 +3,12 @@
 .map {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 28px;
 
-  @media (max-width: $breakpoint-large) {
-    gap: 34px;
-  }
   .mapTitle {
     font-family: "NoirPro", sans-serif;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 24px;
     line-height: 100%;
     letter-spacing: 0.05em;
     color: #ffffff;
@@ -23,16 +20,19 @@
   }
   .mapWrapper {
     .mapAttention {
-      padding: 20px;
-      border: solid 1px #868686;
+      padding: 14px;
+      background: rgba(14, 14, 14, 0.35);
+      border: 1px solid #2d2d2d;
+      backdrop-filter: saturate(130%) blur(15px);
       border-radius: 20px;
+      font-size: 16px;
       -webkit-border-radius: 20px;
       -moz-border-radius: 20px;
       -ms-border-radius: 20px;
       -o-border-radius: 20px;
       margin: 0;
       font-weight: 400;
-      color: #c4c4c4;
-}
+      color: $main-secondary-text-color;
+    }
   }
 }

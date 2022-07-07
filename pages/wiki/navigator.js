@@ -71,17 +71,17 @@ const navigation = [
     items: [
       {
         id: 1,
-        title: "Карта",
-        icon: "/emoji/map.png",
-        type: "default",
-        href: "/wiki/map",
-      },
-      {
-        id: 2,
         title: "Хайперлуп",
         icon: "/emoji/hyperloop.png",
         type: "default",
         href: "/wiki/hyperloop",
+      },
+      {
+        id: 2,
+        title: "Карта",
+        icon: "/emoji/map.png",
+        type: "default",
+        href: "/wiki/map",
       },
     ],
   },

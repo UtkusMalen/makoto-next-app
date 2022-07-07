@@ -1,0 +1,116 @@
+@import "./styles/Constants.module.scss";
+
+.wrapper {
+  margin: 100px auto 300px;
+  display: flex;
+  flex-direction: row;
+  gap: 140px;
+
+  @media (max-width: $breakpoint-large) {
+    gap: 100px;
+  }
+  @media (max-width: $breakpoint-laptop) {
+    gap: 60px;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    gap: 40px;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    justify-content: center;
+  }
+
+  .notFoundImage {
+    min-width: 502px;
+    height: 521px;
+    background-image: url("/PageNotFound.png");
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media (max-width: $breakpoint-large) {
+      min-width: 400px;
+    }
+    @media (max-width: $breakpoint-laptop) {
+      min-width: 300px;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      min-width: 180px;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-start;
+
+    .notFoundTitle {
+      margin: 0;
+      font-family: "NoirPro", sans-serif;
+      font-size: 100px;
+
+      @media (max-width: $breakpoint-large) {
+        font-size: 90px;
+      }
+      @media (max-width: $breakpoint-laptop) {
+        font-size: 80px;
+      }
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 70px;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 60px;
+      }
+    }
+
+    .notFoundSubtitle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+
+      .pageNotFoundEmoji {
+        min-width: 28px;
+        height: 28px;
+        background-image: url("/emoji/emojiSad.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        align-self: flex-start;
+
+        @media (max-width: $breakpoint-large) {
+        }
+        @media (max-width: $breakpoint-laptop) {
+        }
+        @media (max-width: $breakpoint-tablet) {
+        }
+        @media (max-width: $breakpoint-mobile) {
+          min-width: 16px;
+          height: 16px;
+        }
+      }
+
+      .pageNotFoundText {
+        margin: 0;
+        font-family: "NoirPro", sans-serif;
+        font-size: 24px;
+
+        @media (max-width: $breakpoint-large) {
+          font-size: 22px;
+        }
+        @media (max-width: $breakpoint-laptop) {
+          font-size: 20px;
+        }
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 18px;
+        }
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
