@@ -1,21 +1,31 @@
 @import "../../styles/Constants.module.scss";
 
 .navigatorItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 15px;
   padding: 14px;
   background: rgba(14, 14, 14, 0.35);
   border: 1px solid #2d2d2d;
+  -webkit-backdrop-filter: saturate(130%) blur(15px);
   backdrop-filter: saturate(130%) blur(15px);
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  // backdrop-filter: blur(20px);
   border-radius: 6px;
   transition: 0.1s background ease-in-out;
   -webkit-transition: 0.1s background ease-in-out;
   -moz-transition: 0.1s background ease-in-out;
   -ms-transition: 0.1s background ease-in-out;
   -o-transition: 0.1s background ease-in-out;
+
+  @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background: rgba(14, 14, 14, 0.4);
+  }
 
   &:hover {
     background: #363636;
@@ -27,9 +37,18 @@
   }
 
   .navigatorItemHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 
     .navigatorItemEmoji {

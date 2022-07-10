@@ -4,13 +4,25 @@
   margin: 130px 0 300px 0;
 
   .guideWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     position: relative;
 
     .guideTitleWrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       margin: 0 auto;
 
@@ -47,9 +59,18 @@
     }
 
     .guideButtonsWrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
       margin: 80px 0 0 0;
       gap: 20px;
@@ -58,12 +79,22 @@
     .guideStepsWrapper {
       margin: 40px auto 0 auto;
       max-width: 600px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       gap: 20px;
 
       .guideStepWrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         position: relative;
         .guideArrow {
@@ -104,9 +135,18 @@
         }
 
         .guideStepHeader {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
+          -webkit-box-align: start;
+          -ms-flex-align: start;
           align-items: flex-start;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
           justify-content: flex-start;
 
           .guideStepDot {
@@ -114,7 +154,9 @@
             height: 10px;
             background: #ecdb85;
             border: 1px solid #fff3b4;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
+            -webkit-box-shadow: 0px 0px 8px #fff3b4;
             box-shadow: 0px 0px 8px #fff3b4;
             border-radius: 50%;
             -webkit-border-radius: 50%;

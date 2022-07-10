@@ -8,17 +8,6 @@ import axios from "axios";
 const MainText = ({ pageData, serverData }) => {
   const tags = pageData.fields.mainTextTags.items;
 
-  const test = 6;
-
-  const tst = 0;
-  console.log(serverData);
-
-  // style={{
-  //   transform: `translateX(${
-  //     serverData ? '(serverData.players.online * 7) / 2' : "21"
-  //   }px)`,
-  // }}
-
   return (
     <div>
       <div className={styles.mainTextWrapper}>
@@ -68,13 +57,6 @@ const MainText = ({ pageData, serverData }) => {
                   ))}
 
             <div
-              // style={{
-              //   transform: `translateX(-${
-              //     serverData && serverData.players.online <= 6
-              //       ? serverData.players.online * 7
-              //       : "42"
-              //   }px)`,
-              // }}
               style={{
                 transform: `translateX(-${
                   serverData
@@ -96,7 +78,7 @@ const MainText = ({ pageData, serverData }) => {
           </div>
         </div>
 
-        <div>
+        <div className="maskPlayers">
           <svg viewBox="0 0 0.84 1">
             <defs>
               <clipPath clipPathUnits="objectBoundingBox" id="deermask">

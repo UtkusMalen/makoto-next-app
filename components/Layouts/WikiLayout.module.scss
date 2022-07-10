@@ -1,7 +1,12 @@
 @import "../../styles/Constants.module.scss";
 
 .wikiWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   gap: 28px;
   margin: 50px 0 100px 0;
@@ -24,6 +29,9 @@
   }
 
   @media (max-width: $breakpoint-laptop) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   @media (max-width: $breakpoint-mobile) {
@@ -31,11 +39,17 @@
   }
 
   .wikiMenuWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 28px;
     position: sticky;
     top: 60px;
+    -ms-flex-item-align: start;
     align-self: flex-start;
 
     &::after {
@@ -49,6 +63,18 @@
 
       left: 0;
       bottom: 0;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(17, 17, 17, 0)),
+        to(rgba(17, 17, 17, 0.5))
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(17, 17, 17, 0) 0%,
+        rgba(17, 17, 17, 0.5) 100%
+      );
       background: linear-gradient(
         180deg,
         rgba(17, 17, 17, 0) 0%,
@@ -81,12 +107,18 @@
       min-width: 300px;
       background: rgba(14, 14, 14, 0.35);
       border: 1px solid #2d2d2d;
+      -webkit-backdrop-filter: blur(26px);
       backdrop-filter: blur(26px);
-
       border-radius: 20px;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
-
       padding: 14px;
+
+      @supports not (
+        ((-webkit-backdrop-filter: none) or (backdrop-filter: none))
+      ) {
+        background: rgba(14, 14, 14, 0.7);
+      }
 
       @media (max-width: $breakpoint-laptop) {
         overflow-y: overlay;
@@ -110,23 +142,31 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 2px;
 
         .wikiMenuEmoji {
           max-width: 16px;
           max-height: 16px;
-          // background-image: url("/emoji/rule6.png");
-          // background-size: contain;
-          // background-position: center;
-          // background-repeat: no-repeat;
         }
 
         .wikiMenuItem {
           padding: 14px 8px;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           gap: 8px;
           transition: 0.1s all ease-in-out;
@@ -137,6 +177,8 @@
           border-radius: 6px;
 
           @media (max-width: $breakpoint-mobile) {
+            -webkit-box-align: start;
+            -ms-flex-align: start;
             align-items: flex-start;
           }
 
@@ -155,14 +197,6 @@
             color: $main-secondary-text-color;
             white-space: nowrap;
             margin: 0;
-
-            // @media (max-width: $breakpoint-laptop) {
-            //   font-size: 18px;
-            // }
-
-            // @media (max-width: $breakpoint-mobile) {
-            //   margin-top: 5px;
-            // }
           }
         }
 
@@ -180,7 +214,10 @@
             background: $second-color;
             border-radius: 6px;
             top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
+            -webkit-box-shadow: 0px 0px 2px rgba(241, 231, 180, 0.35);
             box-shadow: 0px 0px 2px rgba(241, 231, 180, 0.35);
           }
         }

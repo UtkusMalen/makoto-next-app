@@ -3,15 +3,30 @@
   padding: 14px;
   background: rgba(14, 14, 14, 0.35);
   border: 1px solid #2d2d2d;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-radius: 20px;
   cursor: pointer;
 
+  @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background: rgba(14, 14, 14, 0.7);
+  }
+
   .dropdownBranchHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 
     .dropdownBranchTitle {
@@ -20,23 +35,20 @@
       font-size: 14px;
     }
     .dropdownBranchArrow {
-      // min-width: 16px;
-      // height: 6px;
-      // background-image: url("/icons/arrowBlue.svg");
-      // background-size: contain;
-      // background-position: center;
-      // background-repeat: no-repeat;
       transition: 0.3s all ease-in-out;
       -webkit-transition: 0.3s all ease-in-out;
       -moz-transition: 0.3s all ease-in-out;
       -ms-transition: 0.3s all ease-in-out;
       -o-transition: 0.3s all ease-in-out;
+      -webkit-transition-delay: 0.1s;
+      -o-transition-delay: 0.1s;
       transition-delay: 0.1s;
 
       border: solid black;
       border-width: 0 3px 3px 0;
       display: inline-block;
       padding: 3px;
+      -ms-transform: rotate(45deg);
       transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
     }
@@ -47,6 +59,8 @@
     max-height: 0;
     margin: 0 0 0 0;
     overflow: hidden;
+    -webkit-transition: 0.5s all e;
+    -o-transition: 0.5s all e;
     transition: 0.5s all e;
     -webkit-transition: 0.5s all cubic-bezier(0, 1, 0, 1);
     -moz-transition: 0.5s all cubic-bezier(0, 1, 0, 1);
@@ -54,12 +68,22 @@
     -o-transition: 0.5s all cubic-bezier(0, 1, 0, 1);
     list-style: none;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 10px;
 
     .dropdownItem {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
       gap: 10px;
 

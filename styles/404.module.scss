@@ -2,7 +2,12 @@
 
 .wrapper {
   margin: 100px auto 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   gap: 140px;
 
@@ -16,6 +21,8 @@
     gap: 40px;
   }
   @media (max-width: $breakpoint-mobile) {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 
@@ -42,9 +49,16 @@
   }
 
   .textWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 28px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
 
     .notFoundTitle {
@@ -67,8 +81,15 @@
     }
 
     .notFoundSubtitle {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       gap: 10px;
 
@@ -79,6 +100,7 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+        -ms-flex-item-align: start;
         align-self: flex-start;
 
         @media (max-width: $breakpoint-large) {

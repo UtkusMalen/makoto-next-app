@@ -13,6 +13,8 @@
   font-family: "NoirPro", sans-serif;
 
   @media (min-width: 769px) {
+    -webkit-transition: 0.2s all ease-in-out;
+    -o-transition: 0.2s all ease-in-out;
     transition: 0.2s all ease-in-out;
   }
 
@@ -25,8 +27,14 @@
   }
 
   .desktopNav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     list-style: none;
     margin: 0;
@@ -35,6 +43,8 @@
     li {
       a {
         opacity: 0.8;
+        -webkit-transition: opacity 400ms;
+        -o-transition: opacity 400ms;
         transition: opacity 400ms;
 
         &:hover {
@@ -61,6 +71,9 @@
 
   @media (max-width: 768px) {
     .desktopNav {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none;
@@ -70,20 +83,44 @@
       width: 100%;
       height: 44px;
       background: rgba(44, 44, 44, 0.1);
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
       justify-content: start;
       overflow: auto;
       z-index: -1;
       backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      -moz-backdrop-filter: blur(2px);
       border-bottom: 0.2px solid rgba(255, 255, 255, 0.067);
+      -webkit-transition: background 0.44s cubic-bezier(0.52, 0.16, 0.24, 1),
+        height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
+        -webkit-backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
+      transition: background 0.44s cubic-bezier(0.52, 0.16, 0.24, 1),
+        height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
+        -webkit-backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
+      -o-transition: background 0.44s cubic-bezier(0.52, 0.16, 0.24, 1),
+        height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
+        backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
       transition: background 0.44s cubic-bezier(0.52, 0.16, 0.24, 1),
         height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
         backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
+      transition: background 0.44s cubic-bezier(0.52, 0.16, 0.24, 1),
+        height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
+        backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
+        -webkit-backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
+
+      @supports not (
+        (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+      ) {
+        background: rgba(24, 24, 24, 0.7);
+      }
 
       &::-webkit-scrollbar {
         display: none;
       }
 
       .navbarButton {
+        -ms-flex-item-align: start;
         align-self: flex-start;
         margin-top: 20px;
       }
@@ -91,6 +128,8 @@
       li {
         width: 100%;
         padding: 0 32px;
+        -webkit-transition: opacity 0.1s ease-in-out 0.1s;
+        -o-transition: opacity 0.1s ease-in-out 0.1s;
         transition: opacity 0.1s ease-in-out 0.1s;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         opacity: 0;
@@ -122,12 +161,18 @@
     }
 
     &.active .desktopNav li a {
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
       transform: translateY(0);
       opacity: 1;
     }
 
     &.active .desktopNav li {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
       transform: translateX(0);
+      -webkit-transition: 0.1s all ease-in-out;
+      -o-transition: 0.1s all ease-in-out;
       transition: 0.1s all ease-in-out;
       opacity: 1;
     }
@@ -135,19 +180,48 @@
     &.active .desktopNav {
       height: 100vh;
       backdrop-filter: saturate(180%) blur(20px) !important;
+      -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+      -moz-backdrop-filter: saturate(180%) blur(20px) !important;
       background: rgba(1, 1, 1, 0.8) !important;
+
+      -webkit-transition: background 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
+        height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
+        -webkit-backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
+
+      transition: background 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
+        height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
+        -webkit-backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
+
+      -o-transition: background 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
+        height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
+        backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
 
       transition: background 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
         height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
         backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
+
+      transition: background 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
+        height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1),
+        backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1),
+        -webkit-backdrop-filter 0.36s cubic-bezier(0.32, 0.08, 0.24, 1);
+
+      @supports not (
+        (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+      ) {
+        background: rgba(1, 1, 1, 0.95) !important;
+      }
     }
 
     &.active {
     }
 
     .mobileNav {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       width: 100%;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
       justify-content: space-between;
       list-style: none;
       padding: 0;
@@ -155,7 +229,11 @@
       li .menuIconContainer {
         width: 20px;
         height: 44px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -169,9 +247,24 @@
             height: 1px;
             width: 100%;
             background: #fff;
+            -webkit-transition-property: top, -webkit-transform;
+            transition-property: top, -webkit-transform;
+            -o-transition-property: transform, top;
             transition-property: transform, top;
+            transition-property: transform, top, -webkit-transform;
+            -webkit-transition-delay: 0ms, 70ms;
+            -o-transition-delay: 0ms, 70ms;
             transition-delay: 0ms, 70ms;
+            -webkit-transition-duration: 200ms;
+            -o-transition-duration: 200ms;
             transition-duration: 200ms;
+            -webkit-transition-timing-function: cubic-bezier(
+              0.52,
+              0.16,
+              0.52,
+              0.84
+            );
+            -o-transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
             transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
             top: -4px;
           }
@@ -180,9 +273,24 @@
             height: 1px;
             width: 100%;
             background: #fff;
+            -webkit-transition-property: top, -webkit-transform;
+            transition-property: top, -webkit-transform;
+            -o-transition-property: transform, top;
             transition-property: transform, top;
+            transition-property: transform, top, -webkit-transform;
+            -webkit-transition-delay: 0ms, 70ms;
+            -o-transition-delay: 0ms, 70ms;
             transition-delay: 0ms, 70ms;
+            -webkit-transition-duration: 200ms;
+            -o-transition-duration: 200ms;
             transition-duration: 200ms;
+            -webkit-transition-timing-function: cubic-bezier(
+              0.52,
+              0.16,
+              0.52,
+              0.84
+            );
+            -o-transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
             transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
             top: 4px;
           }
@@ -193,18 +301,52 @@
     &.active .mobileNav .menuIconContainer {
       .line1 {
         top: 0 !important;
+        -webkit-transform: rotateZ(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotateZ(45deg);
+        -webkit-transition-property: top, -webkit-transform;
+        transition-property: top, -webkit-transform;
+        -o-transition-property: top, transform;
         transition-property: top, transform;
+        transition-property: top, transform, -webkit-transform;
+        -webkit-transition-delay: 70ms, 0ms !important;
+        -o-transition-delay: 70ms, 0ms !important;
         transition-delay: 70ms, 0ms !important;
+        -webkit-transition-delay: 260ms;
+        -o-transition-delay: 260ms;
         transition-delay: 260ms;
+        -webkit-transition-timing-function: cubic-bezier(
+          0.52,
+          0.16,
+          0.52,
+          0.84
+        );
+        -o-transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
         transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
       }
       .line2 {
         top: 0 !important;
+        -webkit-transform: rotateZ(-45deg);
+        -ms-transform: rotate(-45deg);
         transform: rotateZ(-45deg);
+        -webkit-transition-property: top, -webkit-transform;
+        transition-property: top, -webkit-transform;
+        -o-transition-property: top, transform;
         transition-property: top, transform;
+        transition-property: top, transform, -webkit-transform;
+        -webkit-transition-delay: 70ms, 0ms !important;
+        -o-transition-delay: 70ms, 0ms !important;
         transition-delay: 70ms, 0ms !important;
+        -webkit-transition-delay: 260ms;
+        -o-transition-delay: 260ms;
         transition-delay: 260ms;
+        -webkit-transition-timing-function: cubic-bezier(
+          0.52,
+          0.16,
+          0.52,
+          0.84
+        );
+        -o-transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
         transition-timing-function: cubic-bezier(0.52, 0.16, 0.52, 0.84);
       }
     }

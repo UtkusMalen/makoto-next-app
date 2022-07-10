@@ -1,7 +1,12 @@
 @import "./styles/Constants.module.scss";
 
 .rulesWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   gap: 28px;
   margin: 0 0 100px 0;
@@ -17,10 +22,17 @@
       bottom: 20px;
       border: 1px solid #2d2d2d;
       background: rgba(14, 14, 14, 0.35);
+      -webkit-backdrop-filter: saturate(130%) blur(2px);
       backdrop-filter: saturate(130%) blur(2px);
       z-index: 1000;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
 
       .rulesArrow {
@@ -31,20 +43,31 @@
         background-position: center;
         background-repeat: no-repeat;
         opacity: 0.8;
+        -webkit-transform: rotate(180deg) translateY(1px);
+        -ms-transform: rotate(180deg) translateY(1px);
         transform: rotate(180deg) translateY(1px);
       }
     }
   }
 
   @media (max-width: $breakpoint-laptop) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
   .sidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 28px;
     position: sticky;
+    -ms-flex-item-align: start;
     align-self: flex-start;
     top: 60px;
 
@@ -57,6 +80,18 @@
 
         left: 0;
         bottom: 0;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(rgba(17, 17, 17, 0)),
+          to(rgba(17, 17, 17, 0.5))
+        );
+        background: -o-linear-gradient(
+          top,
+          rgba(17, 17, 17, 0) 0%,
+          rgba(17, 17, 17, 0.5) 100%
+        );
         background: linear-gradient(
           180deg,
           rgba(17, 17, 17, 0) 0%,
@@ -78,8 +113,6 @@
       font-family: "NoirPro", sans-serif;
       font-weight: bold;
       font-size: 24px;
-      // line-height: 100%;
-      // letter-spacing: 0.05em;
       color: $main-font-color;
       white-space: nowrap;
     }
@@ -87,18 +120,22 @@
     .sidebarListWrapper {
       width: 300px;
       padding: 14px;
-
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
-
       max-height: calc(100vh - 270px);
       overflow-y: auto;
       background: rgba(14, 14, 14, 0.35);
       border: 1px solid #2d2d2d;
+      -webkit-backdrop-filter: saturate(130%) blur(15px);
       backdrop-filter: saturate(130%) blur(15px);
-      /* Note: backdrop-filter has minimal browser support */
-
       border-radius: 20px;
       position: relative;
+
+      @supports not (
+        ((-webkit-backdrop-filter: none) or (backdrop-filter: none))
+      ) {
+        background: rgba(14, 14, 14, 0.7);
+      }
 
       @media (max-width: $breakpoint-laptop) {
         width: 100%;
@@ -106,7 +143,12 @@
       }
 
       .sidebarList {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         margin: 0;
         list-style: none;
@@ -133,16 +175,25 @@
   }
 
   .rulesitemsList {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
-    // gap: 60px;
   }
 
   .sticky {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    position: -webkit-sticky;
     position: sticky;
     top: 10px;
     width: 140px;

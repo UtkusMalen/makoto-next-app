@@ -2,21 +2,50 @@
 
 .mainTextWrapper {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 
   .serverStats {
     width: 100%;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 
     &::after {
       content: "";
       height: 101%;
       width: 50px;
+      background: -webkit-gradient(
+        linear,
+        right top,
+        left top,
+        from(#111111),
+        color-stop(46.94%, #111111),
+        color-stop(99.27%, rgba(17, 17, 17, 0)),
+        to(rgba(17, 17, 17, 0))
+      );
+      background: -o-linear-gradient(
+        right,
+        #111111 0%,
+        #111111 46.94%,
+        rgba(17, 17, 17, 0) 99.27%,
+        rgba(17, 17, 17, 0) 100%
+      );
       background: linear-gradient(
         270deg,
         #111111 0%,
@@ -30,6 +59,8 @@
       display: none;
 
       @media (max-width: $breakpoint-mobile) {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
       }
     }
@@ -37,8 +68,15 @@
     margin-top: 40px;
 
     .serverStatsWrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       gap: 19px;
       position: relative;
@@ -85,8 +123,15 @@
         }
 
         .serverStatsWrapper {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
           align-items: center;
           margin-top: 6px;
           gap: 2px;
@@ -100,7 +145,9 @@
             height: 8px;
             background: #175b22;
             border: 1px solid #00f546;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
+            -webkit-box-shadow: 0px 0px 3px rgba(0, 245, 69, 1);
             box-shadow: 0px 0px 3px rgba(0, 245, 69, 1);
             border-radius: 50%;
             -webkit-border-radius: 50%;
@@ -114,7 +161,9 @@
             @extend .serverStatsLampActive;
             background: #701c1c;
             border: 1px solid #f50000;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
+            -webkit-box-shadow: 0px 0px 3px rgba(245, 0, 0, 1);
             box-shadow: 0px 0px 3px rgba(245, 0, 0, 1);
           }
 
@@ -174,7 +223,12 @@
     }
   }
   .playersHeads {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
 
     .playerHeadLoader {
@@ -186,6 +240,18 @@
         stroke: none;
         animation: loader 2s ease-in-out infinite;
         -webkit-animation: loader 2s ease-in-out infinite;
+      }
+
+      @-webkit-keyframes loader {
+        0% {
+          fill: $loader-start-color;
+        }
+        50% {
+          fill: $loader-end-color;
+        }
+        100% {
+          fill: $loader-start-color;
+        }
       }
 
       @keyframes loader {
@@ -210,8 +276,14 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     transform: translateX(-42px);
     -webkit-transform: translateX(-42px);
@@ -221,6 +293,8 @@
 
     p {
       margin: 0;
+      -webkit-transform: translateX(-2px);
+      -ms-transform: translateX(-2px);
       transform: translateX(-2px);
     }
   }
@@ -251,8 +325,15 @@
   }
   .secondaryText {
     color: $main-secondary-text-color;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin: 20px 0 0 0;
     gap: 10px;
