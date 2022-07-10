@@ -4,7 +4,6 @@ import styles from "../../styles/Nether.module.scss";
 import client from "../../contentful";
 
 const DocsPage = ({ branches }) => {
-  console.log(branches);
   return (
     <div className={styles.nether}>
       <h2 className={styles.netherTitle}>Ад</h2>

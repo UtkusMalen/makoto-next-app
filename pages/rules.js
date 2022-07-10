@@ -8,7 +8,6 @@ import { animateScroll } from "react-scroll";
 
 const Rules = ({ rules, ruleContainers }) => {
   const { title } = rules.fields;
-  console.log(ruleContainers);
 
   function SortAscending(arr) {
     return arr.sort((a, b) => (a.fields.id > b.fields.id ? 1 : -1));

@@ -69,7 +69,6 @@ const navigation = [
 
 const WikiLayout = ({ children, paths }) => {
   const { pathname } = useRouter();
-  console.log(paths);
 
   return (
     <div className="container-max">

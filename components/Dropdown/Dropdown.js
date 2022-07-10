@@ -4,8 +4,6 @@ import { useState } from "react";
 const Dropdown = ({ data, width }) => {
   const [open, setOpen] = useState(false);
 
-  console.log(data.items.items[0].coordinates.replace(/,/g, " | "));
-
   return (
     <div onClick={() => setOpen(!open)} className={styles.dropdownBranch}>
       <div className={styles.dropdownBranchHeader}>
@@ -27,7 +25,7 @@ const Dropdown = ({ data, width }) => {
         </h4>
         <div
           style={{
-            transform: `rotate(${open ? "225" : "45"}deg)`,
+            transform: `rotate(${open ? "225" : "45"}deg) scale(0.8)`,
             borderColor:
               data.color === "red"
                 ? "#E57272"

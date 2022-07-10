@@ -8,7 +8,7 @@ const Guide = ({ guideTitleText, guideTitleEmoji, guideSteps }) => {
     return arr.sort((a, b) => (a.fields.id > b.fields.id ? 1 : -1));
   }
   SortAscending(guideSteps);
-  console.log(guideSteps[1].fields.image.fields.file.details.image.height);
+
   return (
     <section id="guide" className={styles.guide}>
       <div className="container">

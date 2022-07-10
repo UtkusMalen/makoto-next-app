@@ -4,7 +4,6 @@ import styles from "../../styles/Overworld.module.scss";
 import client from "../../contentful";
 
 const DocsPage = ({ overworld }) => {
-  console.log(overworld[0]);
   return (
     <div className={styles.overworld}>
       <h2 className={styles.overworldTitle}>Верхний мир</h2>
