@@ -15,6 +15,9 @@ const DocsPage = ({ branches }) => {
           Именно через ад путешествует большинство игроков. Этому способдствуют
           хайперлупы, которые простираются в даль адских пещер.
         </p>
+        <p className={styles.netherText}>
+          Размер мира — 2.000 блоков в каждую сторону.
+        </p>
         <h3 className={styles.netherSubtitle}>Важные места на ветках</h3>
 
         <div className={styles.netherTree}>
