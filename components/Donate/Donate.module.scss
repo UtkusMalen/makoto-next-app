@@ -1,27 +1,16 @@
 @import "./styles/Constants.module.scss";
 
-.aboutItem {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+.donate {
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  flex-direction: row;
   gap: 28px;
-
-  p {
-    margin: 0;
-  }
+  margin: 100px 0 300px 0;
 
   @media (max-width: $breakpoint-tablet) {
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: reverse !important;
-    -ms-flex-direction: column-reverse !important;
-    flex-direction: column-reverse !important;
+    flex-direction: column;
   }
 
-  .aboutImage {
+  .donateImage {
     min-width: 360px;
     height: 360px;
     border-radius: 20px;
@@ -29,7 +18,7 @@
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    background-image: url("/about/about1.png");
+    background-image: url("/donate/EternalPlus.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,39 +32,22 @@
       width: 100%;
       background-size: cover;
     }
-    @media (max-width: $breakpoint-mobile) {
-      display: none;
-    }
   }
 
-  .aboutTextWrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
+  .donateTextWrapper {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
 
-    .aboutTitleWrapper {
-      display: -webkit-box;
-      display: -ms-flexbox;
+    .donateTitleWrapper {
       display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
       flex-direction: row;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
 
-      .aboutTitleEmoji {
+      .donateTitleEmoji {
         min-width: 28px;
         height: 28px;
-        background-image: url("/emoji/emoji1.png");
+        background-image: url("/emoji/emoji6.png");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -88,32 +60,53 @@
         }
       }
 
-      .aboutTitle {
+      .donateTitle {
         white-space: nowrap;
         font-family: "NoirPro", sans-serif;
         font-weight: normal;
         font-size: 24px;
-        margin: 0 0 0 15px;
+        margin: 0 15px 0 0;
 
         @media (max-width: $breakpoint-large) {
           white-space: normal;
         }
         @media (max-width: $breakpoint-tablet) {
-          margin: 0 0 0 10px;
+          margin: 0 10px 0 0;
         }
 
         @media (max-width: $breakpoint-mobile) {
-          margin: 0 0 0 10px;
+          margin: 0 10px 0 0;
         }
       }
     }
 
-    .aboutDescription {
-      font-weight: normal;
+    .donateBenefits {
+      margin: 14px 0;
+
+      .benefit {
+        display: inline-block;
+        font-family: "Gilroy";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        padding: 7px 16px;
+        background: #fff;
+        border-radius: 6px;
+        color: #111;
+        margin: 0 8px 8px 0;
+        border: 1px solid #2d2d2d;
+        box-sizing: border-box;
+      }
+    }
+
+    .donateDescription {
+      margin: 14px 0;
+      font-family: "Gilroy";
+      font-style: normal;
+      font-weight: 400;
       font-size: 16px;
       line-height: 130%;
       letter-spacing: 0.05em;
-      margin: 17px 0 60px 0;
       color: $main-secondary-text-color;
     }
   }

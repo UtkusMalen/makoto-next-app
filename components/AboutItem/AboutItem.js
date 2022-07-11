@@ -21,7 +21,7 @@ const AboutItem = ({ reverse, articleFields }) => {
         className={styles.aboutImage}
       />
       <div className={styles.aboutTextWrapper}>
-        <div className={styles.aboutTitleWtapper}>
+        <div className={styles.aboutTitleWrapper}>
           <div
             style={{ backgroundImage: `url("${emoji.fields.file.url}")` }}
             className={styles.aboutTitleEmoji}

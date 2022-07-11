@@ -4,8 +4,15 @@ import MainText from "../components/MainText/MainText";
 import TimerLine from "../components/TimerLine/TimerLine";
 import About from "../components/About/About";
 import Guide from "../components/Guide/Guide";
+import Donate from "../components/Donate/Donate";
 
-export default function Home({ home, serverData, guide, articles }) {
+export default function Home({
+  home,
+  serverData,
+  guide,
+  articles,
+  eternalPlus,
+}) {
   return (
     <>
       <Head>
@@ -21,6 +28,7 @@ export default function Home({ home, serverData, guide, articles }) {
         guideTitleText={home.fields.guideTitle}
         guideSteps={guide}
       />
+      <Donate eternalPlus={eternalPlus} />
     </>
   );
 }
@@ -39,6 +47,10 @@ export const getServerSideProps = async () => {
     content_type: "guide",
   });
 
+  const eternalPlus = await client.getEntries({
+    content_type: "eternalPlus",
+  });
+
   const data = await fetch(
     "https://eu.mc-api.net/v3/server/ping/vanilla.makotomc.ru"
   );
@@ -51,6 +63,7 @@ export const getServerSideProps = async () => {
       articles: articles.items,
       guide: guide.items,
       serverData: dataJson,
+      eternalPlus: eternalPlus.items,
     },
   };
 };
