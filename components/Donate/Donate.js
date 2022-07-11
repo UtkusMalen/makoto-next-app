@@ -37,6 +37,7 @@ const AboutItem = ({ eternalPlus }) => {
             bgColor="ECDB85"
             textColor="111111"
             shade="light"
+            url="https://donate.makotomc.ru/"
             serverIcon={eternalPlus[0].fields.buttonIcon}>
             Купить
           </Button>
