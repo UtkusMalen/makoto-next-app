@@ -3,8 +3,6 @@ import styles from "./Donate.module.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const AboutItem = ({ eternalPlus }) => {
-  const { title, description, buttonIcon, emoji, image } = eternalPlus;
-  console.log(eternalPlus[0].fields);
   return (
     <div className="container">
       <div className={styles.donate}>
