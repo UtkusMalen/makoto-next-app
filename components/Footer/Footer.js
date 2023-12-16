@@ -63,7 +63,7 @@ const Footer = () => {
                       ВКонтакте
                     </a>
                     <a href="https://aaio.io/" target="_blank" rel="noreferrer">
-                      <img src="https://aaio.io/assets/svg/banners/big/white-1.svg" title="Aaio - Сервис по приему онлайн платежей"/>
+                      <img src="https://aaio.io/assets/svg/banners/big/dark-1.svg" title="Aaio - Сервис по приему онлайн платежей"/>
                     </a>
                   </li>
                 </ul>
