@@ -67,8 +67,8 @@ const Footer = () => {
               </div>
             </div>
             
-            <a href="https://aaio.io/" target="_blank">
-              <img src="https://aaio.io/assets/svg/banners/big/white-1.svg" title="Aaio - Сервис по приему онлайн платежей" alt={}/>
+            <a href="https://aaio.io/" target="_blank" rel="noreferrer">
+              <img src="https://aaio.io/assets/svg/banners/big/white-1.svg" title="Aaio - Сервис по приему онлайн платежей"/>
             </a>
             
             <div className={styles.footerCopyright}>
